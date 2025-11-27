@@ -86,37 +86,169 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="terminal">
-                <div class="terminal-header">
-                    <div class="terminal-dots">
+            <div class="diagram-card">
+                <div class="diagram-header">
+                    <div class="diagram-dots">
                         <span></span><span></span><span></span>
                     </div>
-                    <span class="terminal-title">layer10-gateway</span>
+                    <span class="diagram-title">MCP Gateway Architecture</span>
                 </div>
-                <div class="terminal-body">
-                    <div class="terminal-line">
-                        <span class="prompt">$</span>
-                        <span class="command">layer10 gateway start --mode=enterprise</span>
-                    </div>
-                    <div class="terminal-line output">
-                        <span class="success">[OK]</span> MCP Gateway initialized on port 8443
-                    </div>
-                    <div class="terminal-line output">
-                        <span class="success">[OK]</span> OAuth 2.1 provider connected
-                    </div>
-                    <div class="terminal-line output">
-                        <span class="success">[OK]</span> Security servers registered: 12
-                    </div>
-                    <div class="terminal-line output">
-                        <span class="info">[INFO]</span> Audit logging enabled (SIEM: Splunk)
-                    </div>
-                    <div class="terminal-line output">
-                        <span class="info">[INFO]</span> Risk scoring engine: active
-                    </div>
-                    <div class="terminal-line">
-                        <span class="prompt">$</span>
-                        <span class="command typing">_</span>
-                    </div>
+                <div class="diagram-body">
+                    <svg viewBox="0 0 440 260" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6366f1"/>
+                                <stop offset="100%" style="stop-color:#8b5cf6"/>
+                            </linearGradient>
+                            <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#22c55e"/>
+                                <stop offset="100%" style="stop-color:#16a34a"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- AI Agents Column -->
+                        <text x="55" y="20" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="600" font-family="system-ui, sans-serif">AI AGENTS</text>
+                        <g>
+                            <rect x="15" y="35" width="80" height="32" rx="6" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1.5"/>
+                            <text x="55" y="55" text-anchor="middle" fill="#a5b4fc" font-size="11" font-family="system-ui, sans-serif">Claude</text>
+                        </g>
+                        <g>
+                            <rect x="15" y="75" width="80" height="32" rx="6" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1.5"/>
+                            <text x="55" y="95" text-anchor="middle" fill="#a5b4fc" font-size="11" font-family="system-ui, sans-serif">GPT-4</text>
+                        </g>
+                        <g>
+                            <rect x="15" y="115" width="80" height="32" rx="6" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1.5"/>
+                            <text x="55" y="135" text-anchor="middle" fill="#a5b4fc" font-size="11" font-family="system-ui, sans-serif">Custom AI</text>
+                        </g>
+
+                        <!-- Animated Flow Lines Left -->
+                        <path d="M95 51 L140 85" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 3" fill="none">
+                            <animate attributeName="stroke-dashoffset" from="14" to="0" dur="0.7s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M95 91 L140 100" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 3" fill="none">
+                            <animate attributeName="stroke-dashoffset" from="14" to="0" dur="0.7s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M95 131 L140 115" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 3" fill="none">
+                            <animate attributeName="stroke-dashoffset" from="14" to="0" dur="0.7s" repeatCount="indefinite"/>
+                        </path>
+
+                        <!-- Moving dots left to center -->
+                        <circle r="3" fill="#818cf8">
+                            <animateMotion dur="1.2s" repeatCount="indefinite" path="M95 51 L140 85"/>
+                        </circle>
+                        <circle r="3" fill="#818cf8">
+                            <animateMotion dur="1.2s" repeatCount="indefinite" begin="0.4s" path="M95 91 L140 100"/>
+                        </circle>
+                        <circle r="3" fill="#818cf8">
+                            <animateMotion dur="1.2s" repeatCount="indefinite" begin="0.8s" path="M95 131 L140 115"/>
+                        </circle>
+
+                        <!-- Layer 10 Gateway (Center) -->
+                        <text x="220" y="20" text-anchor="middle" fill="#c4b5fd" font-size="10" font-weight="600" font-family="system-ui, sans-serif">LAYER 10 GATEWAY</text>
+                        <rect x="140" y="35" width="160" height="180" rx="10" fill="rgba(139,92,246,0.1)" stroke="#8b5cf6" stroke-width="2"/>
+
+                        <!-- Gateway Header -->
+                        <rect x="140" y="35" width="160" height="28" rx="10" fill="rgba(139,92,246,0.2)"/>
+                        <text x="220" y="54" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="500" font-family="system-ui, sans-serif">MCP Security Proxy</text>
+
+                        <!-- Gateway Features with pulsing dots -->
+                        <circle cx="158" cy="80" r="4" fill="#22c55e">
+                            <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="168" y="84" fill="#d1d5db" font-size="9" font-family="system-ui, sans-serif">OAuth 2.1 Auth</text>
+
+                        <circle cx="158" cy="100" r="4" fill="#22c55e">
+                            <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" begin="0.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="168" y="104" fill="#d1d5db" font-size="9" font-family="system-ui, sans-serif">Risk Scoring</text>
+
+                        <circle cx="158" cy="120" r="4" fill="#22c55e">
+                            <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" begin="0.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="168" y="124" fill="#d1d5db" font-size="9" font-family="system-ui, sans-serif">Audit Logging</text>
+
+                        <circle cx="158" cy="140" r="4" fill="#22c55e">
+                            <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="168" y="144" fill="#d1d5db" font-size="9" font-family="system-ui, sans-serif">Payload Inspection</text>
+
+                        <circle cx="158" cy="160" r="4" fill="#3b82f6">
+                            <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" begin="0.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="168" y="164" fill="#d1d5db" font-size="9" font-family="system-ui, sans-serif">TBAC Policies</text>
+
+                        <circle cx="158" cy="180" r="4" fill="#3b82f6">
+                            <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="168" y="184" fill="#d1d5db" font-size="9" font-family="system-ui, sans-serif">Rate Limiting</text>
+
+                        <circle cx="158" cy="200" r="4" fill="#f59e0b">
+                            <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" begin="1.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="168" y="204" fill="#d1d5db" font-size="9" font-family="system-ui, sans-serif">Threat Detection</text>
+
+                        <!-- Animated Flow Lines Right -->
+                        <path d="M300 85 L345 51" stroke="#22c55e" stroke-width="2" stroke-dasharray="4 3" fill="none">
+                            <animate attributeName="stroke-dashoffset" from="14" to="0" dur="0.7s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M300 100 L345 91" stroke="#22c55e" stroke-width="2" stroke-dasharray="4 3" fill="none">
+                            <animate attributeName="stroke-dashoffset" from="14" to="0" dur="0.7s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M300 115 L345 131" stroke="#22c55e" stroke-width="2" stroke-dasharray="4 3" fill="none">
+                            <animate attributeName="stroke-dashoffset" from="14" to="0" dur="0.7s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M300 130 L345 171" stroke="#22c55e" stroke-width="2" stroke-dasharray="4 3" fill="none">
+                            <animate attributeName="stroke-dashoffset" from="14" to="0" dur="0.7s" repeatCount="indefinite"/>
+                        </path>
+
+                        <!-- Moving dots center to right -->
+                        <circle r="3" fill="#4ade80">
+                            <animateMotion dur="1s" repeatCount="indefinite" path="M300 85 L345 51"/>
+                        </circle>
+                        <circle r="3" fill="#4ade80">
+                            <animateMotion dur="1s" repeatCount="indefinite" begin="0.25s" path="M300 100 L345 91"/>
+                        </circle>
+                        <circle r="3" fill="#4ade80">
+                            <animateMotion dur="1s" repeatCount="indefinite" begin="0.5s" path="M300 115 L345 131"/>
+                        </circle>
+                        <circle r="3" fill="#4ade80">
+                            <animateMotion dur="1s" repeatCount="indefinite" begin="0.75s" path="M300 130 L345 171"/>
+                        </circle>
+
+                        <!-- Security Tools Column -->
+                        <text x="385" y="20" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="600" font-family="system-ui, sans-serif">SEC TOOLS</text>
+                        <g>
+                            <rect x="345" y="35" width="80" height="32" rx="6" fill="rgba(34,197,94,0.15)" stroke="#22c55e" stroke-width="1.5"/>
+                            <text x="385" y="55" text-anchor="middle" fill="#86efac" font-size="11" font-family="system-ui, sans-serif">SIEM</text>
+                        </g>
+                        <g>
+                            <rect x="345" y="75" width="80" height="32" rx="6" fill="rgba(34,197,94,0.15)" stroke="#22c55e" stroke-width="1.5"/>
+                            <text x="385" y="95" text-anchor="middle" fill="#86efac" font-size="11" font-family="system-ui, sans-serif">Scanners</text>
+                        </g>
+                        <g>
+                            <rect x="345" y="115" width="80" height="32" rx="6" fill="rgba(34,197,94,0.15)" stroke="#22c55e" stroke-width="1.5"/>
+                            <text x="385" y="135" text-anchor="middle" fill="#86efac" font-size="11" font-family="system-ui, sans-serif">SOAR</text>
+                        </g>
+                        <g>
+                            <rect x="345" y="155" width="80" height="32" rx="6" fill="rgba(34,197,94,0.15)" stroke="#22c55e" stroke-width="1.5"/>
+                            <text x="385" y="175" text-anchor="middle" fill="#86efac" font-size="11" font-family="system-ui, sans-serif">EDR</text>
+                        </g>
+
+                        <!-- Bottom stats bar -->
+                        <rect x="15" y="225" width="410" height="30" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                        <circle cx="35" cy="240" r="4" fill="#22c55e">
+                            <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="45" y="244" fill="#9ca3af" font-size="9" font-family="system-ui, sans-serif">12 servers connected</text>
+                        <circle cx="165" cy="240" r="4" fill="#3b82f6">
+                            <animate attributeName="r" values="3;5;3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="175" y="244" fill="#9ca3af" font-size="9" font-family="system-ui, sans-serif">284 req/min</text>
+                        <circle cx="270" cy="240" r="4" fill="#f59e0b">
+                            <animate attributeName="r" values="3;5;3" dur="2s" begin="1s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="280" y="244" fill="#9ca3af" font-size="9" font-family="system-ui, sans-serif">0 threats blocked</text>
+                    </svg>
                 </div>
             </div>
         </div>
