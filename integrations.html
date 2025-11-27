@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrations | Layer 10 Security</title>
+    <meta name="description" content="MCP Server integrations for enterprise security tools - CrowdStrike, Mimecast, Entra ID, OpenCTI, Zscaler and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="Logo-Website.png" alt="Layer 10 Security" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#architecture">Architecture</a>
+                <a href="integrations.html" class="active">Integrations</a>
+                <a href="docs.html">Docs</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-actions">
+                <a href="about.html#contact" class="btn btn-secondary">Contact</a>
+                <a href="index.html#demo" class="btn btn-primary">Request Demo</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>MCP Server Integrations</h1>
+            <p>Connect your AI agents to enterprise security tools through our pre-built MCP servers</p>
+        </div>
+    </section>
+
+    <!-- Integrations Overview -->
+    <section class="integrations-overview">
+        <div class="container">
+            <div class="overview-content">
+                <p class="lead">Layer 10 provides production-ready MCP servers for leading security platforms. Each integration is built with enterprise security requirements in mind - complete with OAuth 2.1 authentication, audit logging, and granular access controls.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Categories -->
+    <section class="integrations-section">
+        <div class="container">
+            <!-- EDR -->
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12L11 14L15 10M12 3L4 7V11C4 15.4183 7.33064 19.3634 12 20.7059C16.6694 19.3634 20 15.4183 20 11V7L12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Endpoint Detection & Response (EDR)</h2>
+                        <p>Enable AI agents to query endpoint telemetry, investigate alerts, and trigger response actions</p>
+                    </div>
+                </div>
+                <div class="integration-cards">
+                    <div class="integration-card">
+                        <div class="integration-name">
+                            <h3>CrowdStrike Falcon</h3>
+                            <span class="integration-status available">Available</span>
+                        </div>
+                        <p>Full integration with CrowdStrike Falcon platform - query detections, get device info, manage containment, and access threat intelligence.</p>
+                        <div class="integration-capabilities">
+                            <span>Detections API</span>
+                            <span>Host Management</span>
+                            <span>Containment Actions</span>
+                            <span>IOC Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Security -->
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Email Security</h2>
+                        <p>Investigate email threats, manage quarantine, and automate email security workflows</p>
+                    </div>
+                </div>
+                <div class="integration-cards">
+                    <div class="integration-card">
+                        <div class="integration-name">
+                            <h3>Mimecast</h3>
+                            <span class="integration-status available">Available</span>
+                        </div>
+                        <p>Comprehensive Mimecast integration for email security operations - search messages, manage held queues, analyze threats, and configure policies.</p>
+                        <div class="integration-capabilities">
+                            <span>Message Search</span>
+                            <span>Held Queue Management</span>
+                            <span>Threat Analysis</span>
+                            <span>URL Protection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Identity -->
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21M23 21V19C23 17.1362 21.7252 15.5701 20 15.126M16 3.12602C17.7252 3.57006 19 5.13623 19 7C19 8.86377 17.7252 10.4299 16 10.874M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Identity & Access Management</h2>
+                        <p>Query user directories, investigate sign-in anomalies, and manage access policies</p>
+                    </div>
+                </div>
+                <div class="integration-cards">
+                    <div class="integration-card">
+                        <div class="integration-name">
+                            <h3>Microsoft Entra ID</h3>
+                            <span class="integration-status available">Available</span>
+                        </div>
+                        <p>Deep integration with Microsoft Entra ID (formerly Azure AD) - query users, groups, sign-in logs, risky users, and conditional access policies.</p>
+                        <div class="integration-capabilities">
+                            <span>User & Group Queries</span>
+                            <span>Sign-in Log Analysis</span>
+                            <span>Risky User Detection</span>
+                            <span>Conditional Access</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Threat Intelligence -->
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 9V13M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Threat Intelligence</h2>
+                        <p>Enrich investigations with threat intel, query IOCs, and correlate across data sources</p>
+                    </div>
+                </div>
+                <div class="integration-cards">
+                    <div class="integration-card">
+                        <div class="integration-name">
+                            <h3>OpenCTI</h3>
+                            <span class="integration-status available">Available</span>
+                        </div>
+                        <p>Full OpenCTI platform integration - query threat actors, malware, indicators, and relationships. Perfect for threat intelligence enrichment workflows.</p>
+                        <div class="integration-capabilities">
+                            <span>IOC Queries</span>
+                            <span>Threat Actor Intel</span>
+                            <span>Malware Database</span>
+                            <span>Relationship Mapping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ZTNA -->
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: rgba(34, 197, 94, 0.1); color: #22c55e;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 12C21 16.9706 16.9706 21 12 21M21 12C21 7.02944 16.9706 3 12 3M21 12H3M12 21C7.02944 21 3 16.9706 3 12M12 21C13.6569 21 15 16.9706 15 12C15 7.02944 13.6569 3 12 3M12 21C10.3431 21 9 16.9706 9 12C9 7.02944 10.3431 3 12 3M3 12C3 7.02944 7.02944 3 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Zero Trust Network Access (ZTNA)</h2>
+                        <p>Query network policies, investigate access patterns, and manage zero trust controls</p>
+                    </div>
+                </div>
+                <div class="integration-cards">
+                    <div class="integration-card">
+                        <div class="integration-name">
+                            <h3>Zscaler</h3>
+                            <span class="integration-status available">Available</span>
+                        </div>
+                        <p>Zscaler ZIA and ZPA integration - query web security logs, DLP events, access policies, and user activity for comprehensive cloud security visibility.</p>
+                        <div class="integration-capabilities">
+                            <span>Web Security Logs</span>
+                            <span>DLP Events</span>
+                            <span>Access Policies</span>
+                            <span>User Activity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon -->
+    <section class="coming-soon-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Coming Soon</h2>
+                <p>We're actively building integrations for more security platforms</p>
+            </div>
+            <div class="coming-soon-grid">
+                <div class="coming-soon-card">
+                    <span class="category-tag">SIEM</span>
+                    <p>Splunk, Microsoft Sentinel, Elastic Security</p>
+                </div>
+                <div class="coming-soon-card">
+                    <span class="category-tag">SOAR</span>
+                    <p>Palo Alto XSOAR, Splunk SOAR, Tines</p>
+                </div>
+                <div class="coming-soon-card">
+                    <span class="category-tag">Vulnerability Management</span>
+                    <p>Tenable, Qualys, Rapid7</p>
+                </div>
+                <div class="coming-soon-card">
+                    <span class="category-tag">Cloud Security</span>
+                    <p>AWS Security Hub, Azure Defender, GCP SCC</p>
+                </div>
+            </div>
+            <div class="request-integration">
+                <h3>Need a specific integration?</h3>
+                <p>We prioritize integrations based on customer demand. Let us know what you need.</p>
+                <a href="about.html#contact" class="btn btn-primary">Request Integration</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="Logo-Website.png" alt="Layer 10 Security" class="logo-img">
+                    </a>
+                    <p>Enterprise MCP Gateway for Security Operations</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#architecture">Architecture</a>
+                        <a href="index.html#use-cases">Use Cases</a>
+                        <a href="integrations.html">Integrations</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="docs.html">Documentation</a>
+                        <a href="docs.html#api-overview">API Reference</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="#">Changelog</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="about.html#contact">Contact</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Layer 10 Security. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
