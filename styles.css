@@ -363,17 +363,17 @@ img {
 
 .hero-visual {
     position: absolute;
-    right: 3%;
+    right: 40px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
-    width: 50%;
-    max-width: 900px;
 }
 
 /* Architecture Diagram Card */
 .diagram-card {
-    width: 100%;
+    width: 650px;
+    transform: scale(1.35);
+    transform-origin: top right;
     background: var(--bg-secondary);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
