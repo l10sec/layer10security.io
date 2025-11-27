@@ -171,12 +171,12 @@ img {
 }
 
 .logo-img {
-    height: 40px;
+    height: 48px;
     width: auto;
 }
 
 .footer-brand .logo-img {
-    height: 36px;
+    height: 44px;
 }
 
 .logo-icon {
@@ -961,8 +961,9 @@ img {
 }
 
 .footer-brand p {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-muted);
+    line-height: 1.5;
 }
 
 .footer-links {
