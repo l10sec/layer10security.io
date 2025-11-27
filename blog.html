@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Resources | Layer 10 Security</title>
+    <meta name="description" content="Security insights, MCP tutorials, and best practices from the Layer 10 Security team.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="Logo-Website.png" alt="Layer 10 Security" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#architecture">Architecture</a>
+                <a href="docs.html">Docs</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-actions">
+                <a href="about.html#contact" class="btn btn-secondary">Contact</a>
+                <a href="index.html#demo" class="btn btn-primary">Request Demo</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Blog & Resources</h1>
+            <p>Security insights, tutorials, and best practices for AI-powered security operations</p>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post-section">
+        <div class="container">
+            <article class="featured-post">
+                <div class="featured-post-image">
+                    <div class="placeholder-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12L11 14L15 10M12 3L4 7V11C4 15.4183 7.33064 19.3634 12 20.7059C16.6694 19.3634 20 15.4183 20 11V7L12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="featured-post-content">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span class="post-date">November 2025</span>
+                    </div>
+                    <h2>Why Security Teams Need an MCP Gateway</h2>
+                    <p>As AI agents become integral to security operations, the need for secure, auditable, and compliant tool access has never been greater. Learn why traditional API gateways fall short and how purpose-built MCP gateways address the unique challenges of AI-powered security workflows.</p>
+                    <a href="#" class="read-more">Read Article &rarr;</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid-section">
+        <div class="container">
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="security">Security</button>
+                <button class="filter-btn" data-filter="tutorials">Tutorials</button>
+                <button class="filter-btn" data-filter="product">Product</button>
+                <button class="filter-btn" data-filter="industry">Industry</button>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card" data-category="security">
+                    <div class="blog-card-image">
+                        <div class="placeholder-image small">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 15V17M6 21H18C19.1046 21 20 20.1046 20 19V13C20 11.8954 19.1046 11 18 11H6C4.89543 11 4 11.8954 4 13V19C4 20.1046 4.89543 21 6 21ZM16 11V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V11H16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-category">Security</span>
+                            <span class="post-date">Nov 2025</span>
+                        </div>
+                        <h3>Understanding Task-Based Access Control for AI Agents</h3>
+                        <p>TBAC represents a paradigm shift from traditional RBAC. Learn how context-aware authorization protects your security infrastructure.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="tutorials">
+                    <div class="blog-card-image">
+                        <div class="placeholder-image small">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 9L12 5L16 9M16 15L12 19L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-category">Tutorials</span>
+                            <span class="post-date">Nov 2025</span>
+                        </div>
+                        <h3>Integrating CrowdStrike with Your MCP Gateway</h3>
+                        <p>Step-by-step guide to connecting CrowdStrike Falcon to Layer 10 Gateway for AI-powered threat hunting.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="product">
+                    <div class="blog-card-image">
+                        <div class="placeholder-image small">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-category">Product</span>
+                            <span class="post-date">Nov 2025</span>
+                        </div>
+                        <h3>Introducing Real-Time Risk Scoring</h3>
+                        <p>Our ML-powered risk scoring engine evaluates every AI request in real-time. Here's how it works.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="security">
+                    <div class="blog-card-image">
+                        <div class="placeholder-image small">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 9V13M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-category">Security</span>
+                            <span class="post-date">Oct 2025</span>
+                        </div>
+                        <h3>Detecting Prompt Injection in Security Workflows</h3>
+                        <p>How our payload scanner identifies and blocks malicious prompts before they reach your security tools.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="tutorials">
+                    <div class="blog-card-image">
+                        <div class="placeholder-image small">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 17V15M12 17V13M15 17V11M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L18.7071 8.70711C18.8946 8.89464 19 9.149 19 9.41421V19C19 20.1046 18.1046 21 17 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-category">Tutorials</span>
+                            <span class="post-date">Oct 2025</span>
+                        </div>
+                        <h3>Setting Up SIEM Integration with Splunk</h3>
+                        <p>Complete guide to streaming audit logs from Layer 10 Gateway to Splunk for compliance and forensics.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="industry">
+                    <div class="blog-card-image">
+                        <div class="placeholder-image small">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 12C21 16.9706 16.9706 21 12 21M21 12C21 7.02944 16.9706 3 12 3M21 12H3M12 21C7.02944 21 3 16.9706 3 12M12 21C13.6569 21 15 16.9706 15 12C15 7.02944 13.6569 3 12 3M12 21C10.3431 21 9 16.9706 9 12C9 7.02944 10.3431 3 12 3M3 12C3 7.02944 7.02944 3 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-category">Industry</span>
+                            <span class="post-date">Oct 2025</span>
+                        </div>
+                        <h3>The Rise of AI in Security Operations</h3>
+                        <p>Industry trends and predictions for AI-powered security tooling in enterprise environments.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="load-more">
+                <button class="btn btn-secondary">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resources</h2>
+                <p>Whitepapers, guides, and reference materials</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12H15M9 16H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L18.7071 8.70711C18.8946 8.89464 19 9.149 19 9.41421V19C19 20.1046 18.1046 21 17 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Enterprise MCP Security Whitepaper</h3>
+                    <p>Deep dive into securing AI agent communications in enterprise environments.</p>
+                    <a href="#" class="btn btn-ghost">Download PDF</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15M9 5C9 6.10457 9.89543 7 11 7H13C14.1046 7 15 6.10457 15 5M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>TBAC Implementation Guide</h3>
+                    <p>Step-by-step guide to implementing Task-Based Access Control.</p>
+                    <a href="#" class="btn btn-ghost">Download PDF</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12L11 14L15 10M20.6179 5.98434C20.4132 5.99472 20.2072 5.99997 20 5.99997C16.9265 5.99997 14.123 4.84453 11.9999 2.94434C9.87691 4.84446 7.07339 5.99985 4 5.99985C3.79277 5.99985 3.58678 5.9946 3.38213 5.98422C3.1327 6.94783 3 7.95842 3 9.00001C3 14.5915 6.82432 19.2898 12 20.622C17.1757 19.2898 21 14.5915 21 9.00001C21 7.95847 20.8673 6.94791 20.6179 5.98434Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Compliance Checklist</h3>
+                    <p>SOC 2, NIST, and ISO 27001 compliance requirements for MCP deployments.</p>
+                    <a href="#" class="btn btn-ghost">Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Get the latest security insights and product updates delivered to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="Logo-Website.png" alt="Layer 10 Security" class="logo-img">
+                    </a>
+                    <p>Enterprise MCP Gateway for Security Operations</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#architecture">Architecture</a>
+                        <a href="index.html#use-cases">Use Cases</a>
+                        <a href="index.html#integrations">Integrations</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="docs.html">Documentation</a>
+                        <a href="docs.html#api-overview">API Reference</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="#">Changelog</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="about.html#contact">Contact</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Layer 10 Security. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

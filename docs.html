@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | Layer 10 Security</title>
+    <meta name="description" content="Documentation for Layer 10 Security MCP Gateway - Setup guides, API reference, and integration tutorials.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="Logo-Website.png" alt="Layer 10 Security" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#architecture">Architecture</a>
+                <a href="docs.html" class="active">Docs</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-actions">
+                <a href="about.html#contact" class="btn btn-secondary">Contact</a>
+                <a href="index.html#demo" class="btn btn-primary">Request Demo</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Documentation</h1>
+            <p>Everything you need to deploy and integrate the Layer 10 Security MCP Gateway</p>
+        </div>
+    </section>
+
+    <!-- Docs Content -->
+    <section class="docs-section">
+        <div class="container">
+            <div class="docs-layout">
+                <!-- Sidebar -->
+                <aside class="docs-sidebar">
+                    <div class="sidebar-section">
+                        <h4>Getting Started</h4>
+                        <ul>
+                            <li><a href="#introduction" class="active">Introduction</a></li>
+                            <li><a href="#quickstart">Quick Start</a></li>
+                            <li><a href="#installation">Installation</a></li>
+                            <li><a href="#configuration">Configuration</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h4>Core Concepts</h4>
+                        <ul>
+                            <li><a href="#architecture">Architecture</a></li>
+                            <li><a href="#authentication">Authentication</a></li>
+                            <li><a href="#tbac">Task-Based Access Control</a></li>
+                            <li><a href="#audit-logging">Audit Logging</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h4>Integrations</h4>
+                        <ul>
+                            <li><a href="#mcp-servers">MCP Servers</a></li>
+                            <li><a href="#siem">SIEM Integration</a></li>
+                            <li><a href="#identity">Identity Providers</a></li>
+                            <li><a href="#edr">EDR/XDR</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h4>API Reference</h4>
+                        <ul>
+                            <li><a href="#api-overview">Overview</a></li>
+                            <li><a href="#api-endpoints">Endpoints</a></li>
+                            <li><a href="#api-errors">Error Handling</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="docs-content">
+                    <article id="introduction">
+                        <h2>Introduction</h2>
+                        <p>Layer 10 Security MCP Gateway is an enterprise-grade Model Context Protocol gateway designed specifically for security operations. It enables AI agents to securely interact with security tools while maintaining compliance, audit trails, and risk-aware access control.</p>
+
+                        <div class="callout callout-info">
+                            <h4>What is MCP?</h4>
+                            <p>The Model Context Protocol (MCP) is a standardized protocol for AI systems to interact with external tools and data sources. Layer 10 extends MCP with enterprise security features.</p>
+                        </div>
+
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li><strong>Task-Based Access Control (TBAC)</strong> - Context-aware authorization beyond traditional RBAC</li>
+                            <li><strong>Deep Payload Inspection</strong> - Detect prompt injection and command injection attacks</li>
+                            <li><strong>Real-time Risk Scoring</strong> - ML-powered assessment of every request</li>
+                            <li><strong>Forensic Audit Logging</strong> - SIEM-integrated, immutable audit trails</li>
+                            <li><strong>Enterprise IdP Integration</strong> - Okta, Entra ID, Google Workspace</li>
+                        </ul>
+                    </article>
+
+                    <article id="quickstart">
+                        <h2>Quick Start</h2>
+                        <p>Get up and running with Layer 10 Gateway in minutes.</p>
+
+                        <h3>Prerequisites</h3>
+                        <ul>
+                            <li>Docker 20.10+ or Kubernetes 1.24+</li>
+                            <li>Node.js 18+ (for CLI tools)</li>
+                            <li>An OAuth 2.1 compatible identity provider</li>
+                        </ul>
+
+                        <h3>Installation</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Docker</span>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                            <pre><code># Pull the Layer 10 Gateway image
+docker pull layer10security/mcp-gateway:latest
+
+# Run with default configuration
+docker run -d \
+  --name layer10-gateway \
+  -p 8443:8443 \
+  -e OAUTH_PROVIDER_URL=https://your-idp.com \
+  -e OAUTH_CLIENT_ID=your-client-id \
+  layer10security/mcp-gateway:latest</code></pre>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Kubernetes</span>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                            <pre><code># Apply the Helm chart
+helm repo add layer10 https://charts.layer10security.io
+helm install layer10-gateway layer10/mcp-gateway \
+  --set oauth.providerUrl=https://your-idp.com \
+  --set oauth.clientId=your-client-id</code></pre>
+                        </div>
+                    </article>
+
+                    <article id="installation">
+                        <h2>Installation</h2>
+                        <p>Layer 10 Gateway supports multiple deployment options to fit your infrastructure.</p>
+
+                        <h3>Deployment Options</h3>
+                        <div class="options-grid">
+                            <div class="option-card">
+                                <h4>Docker</h4>
+                                <p>Single container deployment for development and small teams.</p>
+                            </div>
+                            <div class="option-card">
+                                <h4>Kubernetes</h4>
+                                <p>Production-grade deployment with auto-scaling and high availability.</p>
+                            </div>
+                            <div class="option-card">
+                                <h4>Standalone</h4>
+                                <p>Binary installation for air-gapped or specialized environments.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="configuration">
+                        <h2>Configuration</h2>
+                        <p>Configure the gateway using environment variables or a YAML configuration file.</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>config.yaml</span>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                            <pre><code>gateway:
+  port: 8443
+  tls:
+    enabled: true
+    certFile: /etc/layer10/tls.crt
+    keyFile: /etc/layer10/tls.key
+
+authentication:
+  provider: oauth2
+  oauth2:
+    issuerUrl: https://your-idp.com
+    clientId: your-client-id
+    scopes:
+      - openid
+      - profile
+      - email
+
+authorization:
+  mode: tbac
+  policies:
+    - name: security-scan
+      tools: [nmap, nuclei, trivy]
+      requiredScopes: [security:scan]
+
+audit:
+  enabled: true
+  destination: splunk
+  splunk:
+    hecUrl: https://splunk.example.com:8088
+    hecToken: ${SPLUNK_HEC_TOKEN}
+
+riskScoring:
+  enabled: true
+  threshold: 0.7
+  actions:
+    high: block
+    medium: log
+    low: allow</code></pre>
+                        </div>
+                    </article>
+
+                    <article id="architecture">
+                        <h2>Architecture</h2>
+                        <p>The Layer 10 Gateway consists of several interconnected components designed for security and scalability.</p>
+
+                        <div class="architecture-overview">
+                            <img src="assets/architecture-diagram.svg" alt="Architecture Diagram" onerror="this.style.display='none'">
+                            <div class="arch-description">
+                                <h4>Components</h4>
+                                <ul>
+                                    <li><strong>API Gateway Layer</strong> - Handles authentication, rate limiting, and TLS termination</li>
+                                    <li><strong>MCP Router</strong> - Session-aware routing to MCP servers</li>
+                                    <li><strong>Policy Engine</strong> - Evaluates TBAC policies for each request</li>
+                                    <li><strong>Risk Scoring Engine</strong> - ML-based threat assessment</li>
+                                    <li><strong>Audit Logger</strong> - Immutable logging with SIEM integration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="authentication">
+                        <h2>Authentication</h2>
+                        <p>Layer 10 Gateway supports OAuth 2.1 and mTLS for secure authentication.</p>
+
+                        <h3>Supported Identity Providers</h3>
+                        <ul>
+                            <li>Microsoft Entra ID (Azure AD)</li>
+                            <li>Okta</li>
+                            <li>Google Workspace</li>
+                            <li>Keycloak</li>
+                            <li>Any OAuth 2.1 / OIDC compliant provider</li>
+                        </ul>
+
+                        <div class="callout callout-warning">
+                            <h4>Security Note</h4>
+                            <p>Always use PKCE (Proof Key for Code Exchange) when configuring OAuth 2.1 clients. Layer 10 Gateway enforces PKCE by default.</p>
+                        </div>
+                    </article>
+
+                    <article id="tbac">
+                        <h2>Task-Based Access Control</h2>
+                        <p>TBAC goes beyond traditional RBAC by considering the context of each request, not just the user's role.</p>
+
+                        <h3>How TBAC Works</h3>
+                        <p>Instead of granting blanket permissions based on roles, TBAC evaluates:</p>
+                        <ul>
+                            <li><strong>Task Context</strong> - What is the AI agent trying to accomplish?</li>
+                            <li><strong>Tool Scope</strong> - Which specific tools are needed?</li>
+                            <li><strong>Data Sensitivity</strong> - What data will be accessed?</li>
+                            <li><strong>Risk Level</strong> - What is the assessed risk of this operation?</li>
+                        </ul>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>TBAC Policy Example</span>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                            <pre><code>policies:
+  - name: vulnerability-scan
+    description: Allow vulnerability scanning on approved assets
+    conditions:
+      - task.type == "vulnerability_scan"
+      - target.asset_group in user.authorized_assets
+      - risk.score < 0.8
+    tools:
+      - nmap
+      - nuclei
+      - trivy
+    actions:
+      - allow
+      - audit</code></pre>
+                        </div>
+                    </article>
+
+                    <article id="api-overview">
+                        <h2>API Reference</h2>
+                        <p>The Layer 10 Gateway exposes a RESTful API for management and a WebSocket/SSE interface for MCP communication.</p>
+
+                        <h3>Base URL</h3>
+                        <div class="code-block">
+                            <pre><code>https://gateway.layer10security.io/api/v1</code></pre>
+                        </div>
+
+                        <h3>Authentication</h3>
+                        <p>All API requests require a Bearer token obtained via OAuth 2.1 flow.</p>
+                        <div class="code-block">
+                            <pre><code>Authorization: Bearer &lt;access_token&gt;</code></pre>
+                        </div>
+                    </article>
+
+                    <div class="docs-footer">
+                        <p>Need help? <a href="about.html#contact">Contact our team</a> or check our <a href="blog.html">blog</a> for tutorials.</p>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="Logo-Website.png" alt="Layer 10 Security" class="logo-img">
+                    </a>
+                    <p>Enterprise MCP Gateway for Security Operations</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#architecture">Architecture</a>
+                        <a href="index.html#use-cases">Use Cases</a>
+                        <a href="index.html#integrations">Integrations</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="docs.html">Documentation</a>
+                        <a href="docs.html#api-overview">API Reference</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="#">Changelog</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="about.html#contact">Contact</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Layer 10 Security. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
