@@ -371,41 +371,20 @@ img {
 
 /* Napkin-style Diagram */
 .napkin-diagram {
-    width: 480px;
-    min-height: 320px;
+    width: 560px;
     background: var(--bg-secondary);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.05),
         0 20px 50px -10px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 12px;
 }
 
 .napkin-diagram svg {
     width: 100%;
     height: auto;
     display: block;
-    font-family: var(--font-mono);
-}
-
-/* Animated flowing dashes */
-.flow-path {
-    animation: flowDash 1.5s linear infinite;
-}
-
-.flow-delay-1 { animation-delay: 0.2s; }
-.flow-delay-2 { animation-delay: 0.4s; }
-.flow-delay-3 { animation-delay: 0.6s; }
-.flow-delay-4 { animation-delay: 0.8s; }
-.flow-delay-5 { animation-delay: 1s; }
-
-@keyframes flowDash {
-    0% { stroke-dashoffset: 20; }
-    100% { stroke-dashoffset: 0; }
 }
 
 /* Pulsing status dots */
