@@ -86,36 +86,93 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="terminal">
-                <div class="terminal-header">
-                    <div class="terminal-dots">
-                        <span></span><span></span><span></span>
+            <div class="arch-diagram">
+                <div class="arch-column arch-clients">
+                    <div class="arch-label">AI Agents</div>
+                    <div class="arch-node">
+                        <div class="node-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/>
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            </svg>
+                        </div>
+                        <span>Claude / GPT</span>
                     </div>
-                    <span class="terminal-title">layer10-gateway</span>
+                    <div class="arch-node">
+                        <div class="node-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <path d="M9 9h6M9 12h6M9 15h4"/>
+                            </svg>
+                        </div>
+                        <span>Custom Agents</span>
+                    </div>
+                    <div class="arch-node">
+                        <div class="node-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 3v18M3 12h18"/>
+                                <circle cx="12" cy="12" r="9"/>
+                            </svg>
+                        </div>
+                        <span>MCP Clients</span>
+                    </div>
                 </div>
-                <div class="terminal-body">
-                    <div class="terminal-line">
-                        <span class="prompt">$</span>
-                        <span class="command">layer10 gateway start --mode=enterprise</span>
+                <div class="arch-flow">
+                    <div class="flow-line"></div>
+                    <div class="flow-arrow"></div>
+                </div>
+                <div class="arch-column arch-gateway">
+                    <div class="arch-label">Layer 10 Gateway</div>
+                    <div class="gateway-box">
+                        <div class="gateway-feature">
+                            <span class="feature-dot"></span>
+                            OAuth 2.1 Auth
+                        </div>
+                        <div class="gateway-feature">
+                            <span class="feature-dot"></span>
+                            Risk Scoring
+                        </div>
+                        <div class="gateway-feature">
+                            <span class="feature-dot"></span>
+                            Audit Logging
+                        </div>
+                        <div class="gateway-feature">
+                            <span class="feature-dot"></span>
+                            Payload Inspection
+                        </div>
                     </div>
-                    <div class="terminal-line output">
-                        <span class="success">[OK]</span> MCP Gateway initialized on port 8443
+                </div>
+                <div class="arch-flow">
+                    <div class="flow-line"></div>
+                    <div class="flow-arrow"></div>
+                </div>
+                <div class="arch-column arch-tools">
+                    <div class="arch-label">Security Tools</div>
+                    <div class="arch-node">
+                        <div class="node-icon node-icon-tool">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <span>Vuln Scanners</span>
                     </div>
-                    <div class="terminal-line output">
-                        <span class="success">[OK]</span> OAuth 2.1 provider connected
+                    <div class="arch-node">
+                        <div class="node-icon node-icon-tool">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M3 9h18M9 21V9"/>
+                            </svg>
+                        </div>
+                        <span>SIEM / Splunk</span>
                     </div>
-                    <div class="terminal-line output">
-                        <span class="success">[OK]</span> Security servers registered: 12
-                    </div>
-                    <div class="terminal-line output">
-                        <span class="info">[INFO]</span> Audit logging enabled (SIEM: Splunk)
-                    </div>
-                    <div class="terminal-line output">
-                        <span class="info">[INFO]</span> Risk scoring engine: active
-                    </div>
-                    <div class="terminal-line">
-                        <span class="prompt">$</span>
-                        <span class="command typing">_</span>
+                    <div class="arch-node">
+                        <div class="node-icon node-icon-tool">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                            </svg>
+                        </div>
+                        <span>SOAR Platform</span>
                     </div>
                 </div>
             </div>
