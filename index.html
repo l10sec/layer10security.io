@@ -87,63 +87,165 @@
         </div>
         <div class="hero-visual">
             <div class="napkin-diagram">
-                <svg width="440" height="300" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- AI Agents Box -->
-                    <rect x="20" y="40" width="100" height="200" rx="8" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 2" fill="rgba(99, 102, 241, 0.05)"/>
-                    <text x="70" y="28" text-anchor="middle" fill="#9ca3af" font-size="11" font-weight="600">AI AGENTS</text>
+                <svg viewBox="0 0 520 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <style>
+                        .flow-line { stroke-dasharray: 8 4; animation: dash 1s linear infinite; }
+                        .flow-line-reverse { stroke-dasharray: 8 4; animation: dash-reverse 1s linear infinite; }
+                        @keyframes dash { to { stroke-dashoffset: -24; } }
+                        @keyframes dash-reverse { to { stroke-dashoffset: 24; } }
+                        .pulse { animation: pulse 2s ease-in-out infinite; }
+                        .pulse-1 { animation-delay: 0.3s; }
+                        .pulse-2 { animation-delay: 0.6s; }
+                        .pulse-3 { animation-delay: 0.9s; }
+                        .pulse-4 { animation-delay: 1.2s; }
+                        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+                        .glow { animation: glow 2s ease-in-out infinite; }
+                        @keyframes glow { 0%, 100% { filter: drop-shadow(0 0 2px #8b5cf6); } 50% { filter: drop-shadow(0 0 8px #8b5cf6); } }
+                        .float { animation: float 3s ease-in-out infinite; }
+                        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+                    </style>
 
-                    <!-- Agent icons -->
-                    <circle cx="70" cy="80" r="16" fill="rgba(99, 102, 241, 0.1)" stroke="#6366f1" stroke-width="1.5"/>
-                    <text x="70" y="84" text-anchor="middle" fill="#6366f1" font-size="10">AI</text>
-                    <text x="70" y="110" text-anchor="middle" fill="#9ca3af" font-size="9">Claude</text>
+                    <!-- AI Agents Section -->
+                    <rect x="10" y="30" width="120" height="300" rx="12" stroke="#6366f1" stroke-width="2" stroke-dasharray="6 3" fill="rgba(99, 102, 241, 0.03)"/>
+                    <text x="70" y="18" text-anchor="middle" fill="#818cf8" font-size="12" font-weight="600" font-family="system-ui">AI AGENTS</text>
 
-                    <circle cx="70" cy="150" r="16" fill="rgba(99, 102, 241, 0.1)" stroke="#6366f1" stroke-width="1.5"/>
-                    <text x="70" y="154" text-anchor="middle" fill="#6366f1" font-size="10">AI</text>
-                    <text x="70" y="180" text-anchor="middle" fill="#9ca3af" font-size="9">GPT</text>
+                    <!-- Claude -->
+                    <g class="float">
+                        <circle cx="70" cy="80" r="22" fill="rgba(99, 102, 241, 0.15)" stroke="#6366f1" stroke-width="2"/>
+                        <text x="70" y="76" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="500">Claude</text>
+                        <text x="70" y="90" text-anchor="middle" fill="#6366f1" font-size="9">Agent</text>
+                    </g>
 
-                    <circle cx="70" cy="220" r="16" fill="rgba(99, 102, 241, 0.1)" stroke="#6366f1" stroke-width="1.5"/>
-                    <text x="70" y="224" text-anchor="middle" fill="#6366f1" font-size="8">MCP</text>
+                    <!-- GPT -->
+                    <g class="float" style="animation-delay: 0.5s">
+                        <circle cx="70" cy="150" r="22" fill="rgba(99, 102, 241, 0.15)" stroke="#6366f1" stroke-width="2"/>
+                        <text x="70" y="146" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="500">GPT</text>
+                        <text x="70" y="160" text-anchor="middle" fill="#6366f1" font-size="9">Agent</text>
+                    </g>
 
-                    <!-- Animated flow lines (left to center) -->
-                    <path class="flow-path" d="M120 80 L150 140" stroke="#6366f1" stroke-width="2" stroke-dasharray="6 4"/>
-                    <path class="flow-path flow-delay-1" d="M120 150 L150 140" stroke="#6366f1" stroke-width="2" stroke-dasharray="6 4"/>
-                    <path class="flow-path flow-delay-2" d="M120 220 L150 140" stroke="#6366f1" stroke-width="2" stroke-dasharray="6 4"/>
+                    <!-- Custom Agent -->
+                    <g class="float" style="animation-delay: 1s">
+                        <circle cx="70" cy="220" r="22" fill="rgba(99, 102, 241, 0.15)" stroke="#6366f1" stroke-width="2"/>
+                        <text x="70" y="216" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="500">Custom</text>
+                        <text x="70" y="230" text-anchor="middle" fill="#6366f1" font-size="9">Agent</text>
+                    </g>
 
-                    <!-- Gateway Box (center) -->
-                    <rect x="150" y="80" width="100" height="120" rx="8" stroke="#8b5cf6" stroke-width="2.5" fill="rgba(139, 92, 246, 0.1)"/>
-                    <text x="200" y="68" text-anchor="middle" fill="#c4b5fd" font-size="10" font-weight="600">LAYER 10</text>
+                    <!-- MCP Client -->
+                    <g class="float" style="animation-delay: 1.5s">
+                        <circle cx="70" cy="290" r="22" fill="rgba(99, 102, 241, 0.15)" stroke="#6366f1" stroke-width="2"/>
+                        <text x="70" y="286" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="500">MCP</text>
+                        <text x="70" y="300" text-anchor="middle" fill="#6366f1" font-size="9">Client</text>
+                    </g>
 
-                    <!-- Gateway features -->
-                    <circle cx="172" cy="108" r="4" fill="#22c55e" class="pulse-dot"/>
-                    <text x="182" y="112" fill="#e2e8f0" font-size="9">Auth</text>
+                    <!-- Flow lines: Agents to Gateway -->
+                    <path class="flow-line" d="M92 80 Q140 80 160 120" stroke="#6366f1" stroke-width="2" fill="none"/>
+                    <path class="flow-line" d="M92 150 Q130 150 160 150" stroke="#6366f1" stroke-width="2" fill="none"/>
+                    <path class="flow-line" d="M92 220 Q140 220 160 180" stroke="#6366f1" stroke-width="2" fill="none"/>
+                    <path class="flow-line" d="M92 290 Q140 290 160 210" stroke="#6366f1" stroke-width="2" fill="none"/>
 
-                    <circle cx="172" cy="128" r="4" fill="#22c55e" class="pulse-dot pulse-delay-1"/>
-                    <text x="182" y="132" fill="#e2e8f0" font-size="9">Risk Score</text>
+                    <!-- Data packets moving left to center -->
+                    <circle r="4" fill="#818cf8">
+                        <animateMotion dur="2s" repeatCount="indefinite" path="M92 80 Q140 80 160 120"/>
+                    </circle>
+                    <circle r="4" fill="#818cf8">
+                        <animateMotion dur="2s" repeatCount="indefinite" begin="0.5s" path="M92 150 Q130 150 160 150"/>
+                    </circle>
+                    <circle r="4" fill="#818cf8">
+                        <animateMotion dur="2s" repeatCount="indefinite" begin="1s" path="M92 220 Q140 220 160 180"/>
+                    </circle>
 
-                    <circle cx="172" cy="148" r="4" fill="#22c55e" class="pulse-dot pulse-delay-2"/>
-                    <text x="182" y="152" fill="#e2e8f0" font-size="9">Audit Log</text>
+                    <!-- LAYER 10 GATEWAY (Center) -->
+                    <g class="glow">
+                        <rect x="160" y="60" width="200" height="240" rx="16" stroke="#8b5cf6" stroke-width="3" fill="rgba(139, 92, 246, 0.08)"/>
+                        <rect x="160" y="60" width="200" height="40" rx="16" fill="rgba(139, 92, 246, 0.15)"/>
+                    </g>
+                    <text x="260" y="45" text-anchor="middle" fill="#c4b5fd" font-size="14" font-weight="700" font-family="system-ui">LAYER 10 GATEWAY</text>
+                    <text x="260" y="85" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">MCP Security Proxy</text>
 
-                    <circle cx="172" cy="168" r="4" fill="#22c55e" class="pulse-dot pulse-delay-3"/>
-                    <text x="182" y="172" fill="#e2e8f0" font-size="9">Inspect</text>
+                    <!-- Gateway Features -->
+                    <g>
+                        <circle cx="185" cy="125" r="6" fill="#22c55e" class="pulse"/>
+                        <text x="198" y="129" fill="#e2e8f0" font-size="11">OAuth 2.1 Authentication</text>
+                    </g>
+                    <g>
+                        <circle cx="185" cy="155" r="6" fill="#22c55e" class="pulse pulse-1"/>
+                        <text x="198" y="159" fill="#e2e8f0" font-size="11">Real-time Risk Scoring</text>
+                    </g>
+                    <g>
+                        <circle cx="185" cy="185" r="6" fill="#22c55e" class="pulse pulse-2"/>
+                        <text x="198" y="189" fill="#e2e8f0" font-size="11">Audit Logging & SIEM</text>
+                    </g>
+                    <g>
+                        <circle cx="185" cy="215" r="6" fill="#22c55e" class="pulse pulse-3"/>
+                        <text x="198" y="219" fill="#e2e8f0" font-size="11">Payload Inspection</text>
+                    </g>
+                    <g>
+                        <circle cx="185" cy="245" r="6" fill="#22c55e" class="pulse pulse-4"/>
+                        <text x="198" y="249" fill="#e2e8f0" font-size="11">Task-Based Access Control</text>
+                    </g>
+                    <g>
+                        <circle cx="185" cy="275" r="6" fill="#3b82f6" class="pulse"/>
+                        <text x="198" y="279" fill="#e2e8f0" font-size="11">Request Rate Limiting</text>
+                    </g>
 
-                    <!-- Animated flow lines (center to right) -->
-                    <path class="flow-path flow-delay-3" d="M250 140 L280 80" stroke="#22c55e" stroke-width="2" stroke-dasharray="6 4"/>
-                    <path class="flow-path flow-delay-4" d="M250 140 L280 150" stroke="#22c55e" stroke-width="2" stroke-dasharray="6 4"/>
-                    <path class="flow-path flow-delay-5" d="M250 140 L280 220" stroke="#22c55e" stroke-width="2" stroke-dasharray="6 4"/>
+                    <!-- Flow lines: Gateway to Tools -->
+                    <path class="flow-line" d="M360 120 Q400 120 420 80" stroke="#22c55e" stroke-width="2" fill="none"/>
+                    <path class="flow-line" d="M360 160 Q390 160 420 150" stroke="#22c55e" stroke-width="2" fill="none"/>
+                    <path class="flow-line" d="M360 200 Q390 200 420 220" stroke="#22c55e" stroke-width="2" fill="none"/>
+                    <path class="flow-line" d="M360 240 Q400 240 420 290" stroke="#22c55e" stroke-width="2" fill="none"/>
 
-                    <!-- Security Tools Box -->
-                    <rect x="280" y="40" width="100" height="200" rx="8" stroke="#22c55e" stroke-width="2" stroke-dasharray="4 2" fill="rgba(34, 197, 94, 0.05)"/>
-                    <text x="330" y="28" text-anchor="middle" fill="#9ca3af" font-size="11" font-weight="600">SEC TOOLS</text>
+                    <!-- Data packets moving center to right -->
+                    <circle r="4" fill="#4ade80">
+                        <animateMotion dur="1.5s" repeatCount="indefinite" path="M360 120 Q400 120 420 80"/>
+                    </circle>
+                    <circle r="4" fill="#4ade80">
+                        <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.4s" path="M360 160 Q390 160 420 150"/>
+                    </circle>
+                    <circle r="4" fill="#4ade80">
+                        <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.8s" path="M360 200 Q390 200 420 220"/>
+                    </circle>
+                    <circle r="4" fill="#4ade80">
+                        <animateMotion dur="1.5s" repeatCount="indefinite" begin="1.2s" path="M360 240 Q400 240 420 290"/>
+                    </circle>
 
-                    <!-- Tool icons -->
-                    <rect x="310" y="64" width="40" height="32" rx="4" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1.5"/>
-                    <text x="330" y="84" text-anchor="middle" fill="#22c55e" font-size="8">SIEM</text>
+                    <!-- Security Tools Section -->
+                    <rect x="390" y="30" width="120" height="300" rx="12" stroke="#22c55e" stroke-width="2" stroke-dasharray="6 3" fill="rgba(34, 197, 94, 0.03)"/>
+                    <text x="450" y="18" text-anchor="middle" fill="#4ade80" font-size="12" font-weight="600" font-family="system-ui">SEC TOOLS</text>
 
-                    <rect x="310" y="134" width="40" height="32" rx="4" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1.5"/>
-                    <text x="330" y="154" text-anchor="middle" fill="#22c55e" font-size="8">VULN</text>
+                    <!-- SIEM -->
+                    <g class="float" style="animation-delay: 0.2s">
+                        <rect x="415" y="55" width="60" height="45" rx="8" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="2"/>
+                        <text x="445" y="75" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="500">SIEM</text>
+                        <text x="445" y="88" text-anchor="middle" fill="#86efac" font-size="8">Splunk</text>
+                    </g>
 
-                    <rect x="310" y="204" width="40" height="32" rx="4" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1.5"/>
-                    <text x="330" y="224" text-anchor="middle" fill="#22c55e" font-size="8">SOAR</text>
+                    <!-- Vuln Scanner -->
+                    <g class="float" style="animation-delay: 0.6s">
+                        <rect x="415" y="115" width="60" height="45" rx="8" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="2"/>
+                        <text x="445" y="135" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="500">VULN</text>
+                        <text x="445" y="148" text-anchor="middle" fill="#86efac" font-size="8">Scanner</text>
+                    </g>
+
+                    <!-- SOAR -->
+                    <g class="float" style="animation-delay: 1s">
+                        <rect x="415" y="175" width="60" height="45" rx="8" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="2"/>
+                        <text x="445" y="195" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="500">SOAR</text>
+                        <text x="445" y="208" text-anchor="middle" fill="#86efac" font-size="8">Platform</text>
+                    </g>
+
+                    <!-- Threat Intel -->
+                    <g class="float" style="animation-delay: 1.4s">
+                        <rect x="415" y="235" width="60" height="45" rx="8" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="2"/>
+                        <text x="445" y="255" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="500">THREAT</text>
+                        <text x="445" y="268" text-anchor="middle" fill="#86efac" font-size="8">Intel</text>
+                    </g>
+
+                    <!-- EDR -->
+                    <g class="float" style="animation-delay: 1.8s">
+                        <rect x="415" y="295" width="60" height="45" rx="8" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="2"/>
+                        <text x="445" y="315" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="500">EDR</text>
+                        <text x="445" y="328" text-anchor="middle" fill="#86efac" font-size="8">Endpoint</text>
+                    </g>
                 </svg>
             </div>
         </div>
