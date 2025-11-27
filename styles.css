@@ -371,7 +371,7 @@ img {
 
 /* Architecture Diagram Card */
 .diagram-card {
-    width: 500px;
+    width: 620px;
     background: var(--bg-secondary);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
