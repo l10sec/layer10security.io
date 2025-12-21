@@ -62,12 +62,9 @@ export const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-center gap-4">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Layer 10 Security. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Built with <span className="text-primary">♥</span> for security teams
           </p>
         </div>
       </div>
