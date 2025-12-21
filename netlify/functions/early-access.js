@@ -69,7 +69,7 @@ exports.handler = async (event, context) => {
         },
         body: JSON.stringify({
           from: 'Layer 10 Security <noreply@layer10security.io>',
-          to: [process.env.NOTIFICATION_EMAIL || 'info@layer10security.io'],
+          to: [process.env.NOTIFICATION_EMAIL],
           subject: `[Early Access Request] ${email}`,
           html: `
             <h2>New Early Access Request</h2>
