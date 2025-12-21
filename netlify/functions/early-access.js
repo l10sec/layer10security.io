@@ -68,7 +68,7 @@ exports.handler = async (event, context) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Layer 10 Security <noreply@layer10security.io>',
+          from: 'Layer 10 Security <noreply@send.layer10security.io>',
           to: [process.env.NOTIFICATION_EMAIL],
           subject: `[Early Access Request] ${email}`,
           html: `
