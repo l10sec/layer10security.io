@@ -1,10 +1,11 @@
 /**
  * Netlify Serverless Function: Contact Form Handler
  *
- * Sends contact form submissions to info@layer10security.io via Resend.
+ * Sends contact form submissions to NOTIFICATION_EMAIL via Resend.
  *
  * Required environment variables in Netlify:
  * - RESEND_API_KEY: Your Resend API key (get one at https://resend.com)
+ * - NOTIFICATION_EMAIL: Email address to receive notifications
  */
 
 exports.handler = async (event, context) => {

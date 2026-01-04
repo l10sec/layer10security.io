@@ -1,12 +1,11 @@
 /**
  * Netlify Serverless Function: Early Access Request Handler
  *
- * Sends an email to info@layer10security.io when someone requests early access.
+ * Sends an email to NOTIFICATION_EMAIL when someone requests early access.
  *
  * Required environment variables in Netlify:
  * - RESEND_API_KEY: Your Resend API key (get one at https://resend.com)
- *
- * Alternative: Use SendGrid by uncommenting that section and setting SENDGRID_API_KEY
+ * - NOTIFICATION_EMAIL: Email address to receive notifications
  */
 
 exports.handler = async (event, context) => {
@@ -90,34 +89,6 @@ exports.handler = async (event, context) => {
         // Don't fail the request - log error but return success to user
       }
     }
-
-    // Alternative: SendGrid (uncomment if using SendGrid instead)
-    /*
-    if (process.env.SENDGRID_API_KEY) {
-      const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          personalizations: [{ to: [{ email: 'info@layer10security.io' }] }],
-          from: { email: 'noreply@layer10security.io', name: 'Layer 10 Security' },
-          subject: `[Early Access Request] ${email}`,
-          content: [
-            {
-              type: 'text/html',
-              value: `<h2>New Early Access Request</h2><p><strong>Email:</strong> ${email}</p>`,
-            },
-          ],
-        }),
-      });
-
-      if (!response.ok) {
-        console.error('SendGrid API error:', await response.text());
-      }
-    }
-    */
 
     return {
       statusCode: 200,
