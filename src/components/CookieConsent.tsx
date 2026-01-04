@@ -4,8 +4,6 @@ import { X } from "lucide-react";
 
 const CONSENT_KEY = "cookie-consent";
 
-type ConsentStatus = "accepted" | "declined" | null;
-
 // Function to load Microsoft Clarity
 const loadClarity = () => {
   if (window.clarity) return; // Already loaded
@@ -31,36 +29,41 @@ declare global {
 }
 
 export const CookieConsent = () => {
-  const [showBanner, setShowBanner] = useState(false);
+  // "loading" = checking localStorage, "show" = show banner, "hidden" = user decided
+  const [bannerState, setBannerState] = useState<"loading" | "show" | "hidden">("loading");
 
   useEffect(() => {
-    const consent = localStorage.getItem(CONSENT_KEY) as ConsentStatus;
+    const consent = localStorage.getItem(CONSENT_KEY);
 
     if (consent === "accepted") {
-      // User previously accepted - load analytics
       loadClarity();
-    } else if (consent === null) {
-      // No decision yet - show banner
-      setShowBanner(true);
+      setBannerState("hidden");
+    } else if (consent === "declined") {
+      setBannerState("hidden");
+    } else {
+      // No decision yet - show the banner
+      setBannerState("show");
     }
-    // If declined, do nothing
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem(CONSENT_KEY, "accepted");
-    setShowBanner(false);
+    setBannerState("hidden");
     loadClarity();
   };
 
   const handleDecline = () => {
     localStorage.setItem(CONSENT_KEY, "declined");
-    setShowBanner(false);
+    setBannerState("hidden");
   };
 
-  if (!showBanner) return null;
+  // Only show banner when bannerState is "show"
+  if (bannerState !== "show") {
+    return null;
+  }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-in slide-in-from-bottom-5 duration-300">
+    <div className="fixed bottom-0 left-0 right-0 z-[9999] p-4">
       <div className="max-w-4xl mx-auto glass rounded-xl p-4 md:p-6 shadow-2xl border border-border/50">
         <div className="flex flex-col md:flex-row md:items-center gap-4">
           <div className="flex-1">
