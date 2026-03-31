@@ -17,7 +17,7 @@ const features = [
   },
   {
     icon: Network,
-    title: "MCP Gateway Integration",
+    title: "Security Tool Integration",
     description: "Connect your security stack through the Model Context Protocol. One gateway aggregates tools from your EDR, email security, identity, and threat intelligence platforms — with automatic discovery.",
     highlights: [],
   },

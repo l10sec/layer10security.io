@@ -129,7 +129,7 @@ export const ArchitectureSection = () => {
               />
             </div>
 
-            {/* Row 3: MCP Gateway Layer */}
+            {/* Row 3: Integration Layer */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ export const ArchitectureSection = () => {
             >
               <div className="flex items-center gap-2 mb-4 justify-center">
                 <Network className="w-5 h-5 text-primary" />
-                <h3 className="font-bold text-sm uppercase tracking-wider">MCP Gateway Layer</h3>
+                <h3 className="font-bold text-sm uppercase tracking-wider">Integration Layer</h3>
               </div>
               <div className="bg-card border-2 border-primary/30 rounded-2xl p-6">
                 <div className="grid grid-cols-3 gap-4">

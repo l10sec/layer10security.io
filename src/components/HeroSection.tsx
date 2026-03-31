@@ -6,7 +6,7 @@ import { ArchitectureDiagram } from "./ArchitectureDiagram";
 const badges = [
   { icon: ShieldCheck, label: "CIS v8.1.2", sublabel: "153 Safeguards" },
   { icon: Brain, label: "AI-Powered", sublabel: "Security Consultant" },
-  { icon: Activity, label: "Live Telemetry", sublabel: "Via MCP Gateway" },
+  { icon: Activity, label: "Live Telemetry", sublabel: "From Your Security Stack" },
 ];
 
 export const HeroSection = () => {

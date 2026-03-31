@@ -11,7 +11,7 @@ const platformFeatures = [
   { name: "AI Consultant", icon: Brain, active: true, color: "bg-green-500" },
   { name: "Roadmap Engine", icon: BarChart3, active: true, color: "bg-green-500" },
   { name: "Compliance Maps", icon: FileCheck, active: true, color: "bg-green-500" },
-  { name: "MCP Gateway", icon: Network, active: true, color: "bg-blue-500" },
+  { name: "Tool Integration", icon: Network, active: true, color: "bg-blue-500" },
   { name: "Live Telemetry", icon: Activity, active: true, color: "bg-blue-500" },
   { name: "Risk Scoring", icon: Shield, active: true, color: "bg-amber-500" },
 ];
