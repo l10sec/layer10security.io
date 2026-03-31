@@ -111,7 +111,7 @@ export const CTASection = () => {
             transition={{ delay: 0.4 }}
             className="mt-6 text-sm text-muted-foreground"
           >
-            Or email us at info@layer10security.io
+            We typically respond within one business day
           </motion.p>
         </motion.div>
       </div>
