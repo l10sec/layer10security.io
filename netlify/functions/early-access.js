@@ -8,10 +8,40 @@
  * - NOTIFICATION_EMAIL: Email address to receive notifications
  */
 
+// Allowed origins for CSRF protection
+const ALLOWED_ORIGINS = [
+  'https://layer10security.io',
+  'https://www.layer10security.io',
+  'http://localhost:8888',
+  'http://localhost:3000',
+];
+
+function validateOrigin(event) {
+  const origin = event.headers.origin || event.headers.Origin;
+  const referer = event.headers.referer || event.headers.Referer;
+
+  if (origin) {
+    return ALLOWED_ORIGINS.some(allowed => origin.startsWith(allowed));
+  }
+
+  if (referer) {
+    return ALLOWED_ORIGINS.some(allowed => referer.startsWith(allowed));
+  }
+
+  if (process.env.CONTEXT === 'dev') {
+    return true;
+  }
+
+  return false;
+}
+
 exports.handler = async (event, context) => {
-  // CORS headers
+  // Origin validation (CSRF protection)
+  const origin = event.headers.origin || event.headers.Origin || '';
+  const allowedOrigin = ALLOWED_ORIGINS.find(allowed => origin.startsWith(allowed));
+
   const headers = {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': allowedOrigin || ALLOWED_ORIGINS[0],
     'Access-Control-Allow-Headers': 'Content-Type',
     'Content-Type': 'application/json',
   };
@@ -19,6 +49,14 @@ exports.handler = async (event, context) => {
   // Handle preflight requests
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
+  }
+
+  if (!validateOrigin(event)) {
+    return {
+      statusCode: 403,
+      headers,
+      body: JSON.stringify({ error: 'Invalid request origin' }),
+    };
   }
 
   // Only allow POST requests

@@ -8,10 +8,49 @@
  * - NOTIFICATION_EMAIL: Email address to receive notifications
  */
 
+// Allowed origins for CSRF protection
+const ALLOWED_ORIGINS = [
+  'https://layer10security.io',
+  'https://www.layer10security.io',
+  'http://localhost:8888',
+  'http://localhost:3000',
+];
+
+function validateOrigin(event) {
+  const origin = event.headers.origin || event.headers.Origin;
+  const referer = event.headers.referer || event.headers.Referer;
+
+  if (origin) {
+    return ALLOWED_ORIGINS.some(allowed => origin.startsWith(allowed));
+  }
+
+  if (referer) {
+    return ALLOWED_ORIGINS.some(allowed => referer.startsWith(allowed));
+  }
+
+  if (process.env.CONTEXT === 'dev') {
+    return true;
+  }
+
+  return false;
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
 exports.handler = async (event, context) => {
-  // CORS headers
+  // Origin validation (CSRF protection)
+  const origin = event.headers.origin || event.headers.Origin || '';
+  const allowedOrigin = ALLOWED_ORIGINS.find(allowed => origin.startsWith(allowed));
+
   const headers = {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': allowedOrigin || ALLOWED_ORIGINS[0],
     'Access-Control-Allow-Headers': 'Content-Type',
     'Content-Type': 'application/json',
   };
@@ -19,6 +58,14 @@ exports.handler = async (event, context) => {
   // Handle preflight requests
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
+  }
+
+  if (!validateOrigin(event)) {
+    return {
+      statusCode: 403,
+      headers,
+      body: JSON.stringify({ error: 'Invalid request origin' }),
+    };
   }
 
   // Only allow POST requests
@@ -76,15 +123,15 @@ exports.handler = async (event, context) => {
           from: 'Layer 10 Security <noreply@layer10security.io>',
           to: [process.env.NOTIFICATION_EMAIL],
           reply_to: email,
-          subject: `[Contact Form] ${subject}`,
+          subject: `[Contact Form] ${escapeHtml(subject)}`,
           html: `
             <h2>New Contact Form Submission</h2>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-            <p><strong>Company:</strong> ${data.company || 'Not provided'}</p>
-            <p><strong>Subject:</strong> ${subject}</p>
+            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> <a href="mailto:${encodeURIComponent(email)}">${escapeHtml(email)}</a></p>
+            <p><strong>Company:</strong> ${escapeHtml(data.company || 'Not provided')}</p>
+            <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
             <h3>Message:</h3>
-            <p>${message.replace(/\n/g, '<br>')}</p>
+            <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
             <hr>
             <p style="color: #666; font-size: 12px;">
               Submitted via Layer 10 Security website at ${new Date().toISOString()}
