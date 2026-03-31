@@ -31,11 +31,11 @@ const gatewayComponents = [
 ];
 
 const securityTools = [
-  { name: "Endpoint Detection & Response", tools: ["CrowdStrike", "SentinelOne"], icon: Shield },
-  { name: "Email Security", tools: ["Mimecast", "Abnormal"], icon: Mail },
-  { name: "Identity & Access", tools: ["Entra ID", "BalkanID"], icon: User },
-  { name: "Threat Intelligence", tools: ["OpenCTI"], icon: Search },
-  { name: "Extended Detection", tools: ["Defender XDR", "Zscaler"], icon: MoreHorizontal },
+  { name: "Endpoint Detection & Response", tools: ["EDR", "Vulnerability Mgmt"], icon: Shield },
+  { name: "Email Security", tools: ["Gateway", "Behavioral AI"], icon: Mail },
+  { name: "Identity & Access", tools: ["Directory", "Governance"], icon: User },
+  { name: "Threat Intelligence", tools: ["CTI Platform", "IOC Feeds"], icon: Search },
+  { name: "XDR & Network", tools: ["XDR", "Secure Web Gateway"], icon: MoreHorizontal },
 ];
 
 export const ArchitectureSection = () => {
