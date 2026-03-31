@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Award, FileCheck, Building2 } from "lucide-react";
+import { ShieldCheck, FileCheck, Plug, Layers } from "lucide-react";
 
-const certifications = [
-  { icon: ShieldCheck, label: "SOC 2 Ready" },
-  { icon: Award, label: "NIST Compliant" },
-  { icon: FileCheck, label: "ISO 27001" },
-  { icon: Building2, label: "HIPAA Compatible" },
+const metrics = [
+  { icon: ShieldCheck, value: "153", label: "Safeguards", sublabel: "CIS Controls v8.1.2" },
+  { icon: FileCheck, value: "3", label: "Compliance Frameworks", sublabel: "CIS, CMMC v2, NIST 800-171" },
+  { icon: Plug, value: "61+", label: "Security Tools", sublabel: "Via MCP Integration" },
+  { icon: Layers, value: "5", label: "Security Domains", sublabel: "EDR, IAM, Email, Threat Intel, IGA" },
 ];
 
 export const StatsBar = () => {
   return (
     <section className="py-12 border-y border-border relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
-      
+
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,9 +26,9 @@ export const StatsBar = () => {
         </motion.div>
 
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-          {certifications.map((cert, index) => (
+          {metrics.map((metric, index) => (
             <motion.div
-              key={cert.label}
+              key={metric.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -36,11 +36,14 @@ export const StatsBar = () => {
               className="flex items-center gap-3 group"
             >
               <div className="p-2 rounded-lg bg-muted group-hover:bg-primary/10 transition-colors">
-                <cert.icon className="w-5 h-5 text-primary" />
+                <metric.icon className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
-                {cert.label}
-              </span>
+              <div>
+                <p className="text-lg font-bold text-foreground">
+                  {metric.value} <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">{metric.label}</span>
+                </p>
+                <p className="text-xs text-muted-foreground">{metric.sublabel}</p>
+              </div>
             </motion.div>
           ))}
         </div>

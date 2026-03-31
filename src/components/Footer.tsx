@@ -1,11 +1,10 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter, ShieldCheck } from "lucide-react";
 import { Logo } from "./Logo";
 
 const footerLinks = {
-  Product: ["Features", "Architecture", "Integrations", "Pricing"],
-  Company: ["About", "Blog", "Careers", "Contact"],
-  Resources: ["Documentation", "API Reference", "Security", "Status"],
-  Legal: ["Privacy", "Terms", "Security Policy"],
+  Product: ["Features", "Architecture", "Integrations"],
+  Company: ["About", "Contact"],
+  Resources: ["Documentation", "Security"],
 };
 
 const socialLinks = [
@@ -18,15 +17,20 @@ export const Footer = () => {
   return (
     <footer className="border-t border-border py-16">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-6">
               <Logo />
             </div>
             <p className="text-sm text-muted-foreground mb-6 max-w-xs">
-              Enterprise-grade MCP Gateway for secure AI integration in security operations.
+              AI-powered cybersecurity roadmap engine for CISOs. Track CIS Controls, map compliance frameworks, and get AI-assisted guidance.
             </p>
+            {/* CIS Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <ShieldCheck className="w-4 h-4 text-primary" />
+              <span className="text-xs font-medium text-primary">Built on CIS Controls v8.1.2</span>
+            </div>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -64,7 +68,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Layer 10 Security. All rights reserved.
+            © 2026 Layer 10 Security. All rights reserved.
           </p>
         </div>
       </div>

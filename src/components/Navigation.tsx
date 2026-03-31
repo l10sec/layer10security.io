@@ -8,9 +8,7 @@ const navItems = [
   { label: "Features", href: "#features" },
   { label: "Architecture", href: "#architecture" },
   { label: "Integrations", href: "#integrations" },
-  { label: "Docs", href: "#" },
-  { label: "Blog", href: "#" },
-  { label: "About", href: "#" },
+  { label: "Use Cases", href: "#use-cases" },
 ];
 
 export const Navigation = () => {
@@ -60,10 +58,7 @@ export const Navigation = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-4">
-          <Button variant="outline" size="sm">
-            Contact
-          </Button>
-          <Button variant="hero" size="sm">
+          <Button variant="hero" size="sm" onClick={() => scrollToSection('#demo')}>
             Request Demo
           </Button>
         </div>
@@ -97,10 +92,7 @@ export const Navigation = () => {
                 </button>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <Button variant="ghost" className="w-full">
-                  Docs
-                </Button>
-                <Button variant="hero" className="w-full">
+                <Button variant="hero" className="w-full" onClick={() => scrollToSection('#demo')}>
                   Request Demo
                 </Button>
               </div>

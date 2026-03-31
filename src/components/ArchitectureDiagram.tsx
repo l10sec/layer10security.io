@@ -1,35 +1,27 @@
 import { motion } from "framer-motion";
-import { Monitor, Code, MousePointer2, Box, Shield, Server } from "lucide-react";
+import { Shield, Brain, BarChart3, FileCheck, Network, Server, Activity } from "lucide-react";
 
-const clients = [
-  { name: "Claude Desktop", icon: Monitor },
-  { name: "Claude Code", icon: Code },
-  { name: "Cursor", icon: MousePointer2 },
-  { name: "Custom MCP Client", icon: Box },
+const dashboardMetrics = [
+  { label: "CIS Controls", value: "18", sublabel: "Families" },
+  { label: "Safeguards", value: "153", sublabel: "Tracked" },
+  { label: "Compliance", value: "3", sublabel: "Frameworks" },
 ];
 
-const gatewayFeatures = [
-  { name: "OAuth 2.1 Auth", active: true, color: "bg-green-500" },
-  { name: "Risk Scoring", active: true, color: "bg-green-500" },
-  { name: "Audit Logging", active: true, color: "bg-green-500" },
-  { name: "Payload Inspection", active: true, color: "bg-green-500" },
-  { name: "TBAC Policies", active: true, color: "bg-blue-500" },
-  { name: "Rate Limiting", active: false, color: "bg-blue-500" },
-  { name: "Threat Detection", active: false, color: "bg-amber-500" },
+const platformFeatures = [
+  { name: "AI Consultant", icon: Brain, active: true, color: "bg-green-500" },
+  { name: "Roadmap Engine", icon: BarChart3, active: true, color: "bg-green-500" },
+  { name: "Compliance Maps", icon: FileCheck, active: true, color: "bg-green-500" },
+  { name: "MCP Gateway", icon: Network, active: true, color: "bg-blue-500" },
+  { name: "Live Telemetry", icon: Activity, active: true, color: "bg-blue-500" },
+  { name: "Risk Scoring", icon: Shield, active: true, color: "bg-amber-500" },
 ];
 
-const servers = [
+const connectedTools = [
   { name: "EDR" },
   { name: "Email Security" },
-  { name: "Identity" },
+  { name: "IAM" },
   { name: "Threat Intel" },
-  { name: "ZTNA" },
-];
-
-const stats = [
-  { value: "12.4K", label: "Requests Blocked", color: "text-green-500" },
-  { value: "23ms", label: "Avg Latency", color: "text-primary" },
-  { value: "99.99%", label: "Uptime", color: "text-amber-500" },
+  { name: "XDR" },
 ];
 
 export const ArchitectureDiagram = () => {
@@ -42,34 +34,34 @@ export const ArchitectureDiagram = () => {
           <span className="w-3 h-3 rounded-full bg-amber-500" />
           <span className="w-3 h-3 rounded-full bg-green-500" />
         </div>
-        <span className="text-xs text-muted-foreground ml-4">MCP Gateway Architecture</span>
+        <span className="text-xs text-muted-foreground ml-4">Cyber Roadmap Engine</span>
       </div>
 
       {/* Three Column Layout */}
       <div className="grid grid-cols-3 gap-4">
-        {/* Clients Column */}
+        {/* Dashboard Column */}
         <div>
-          <p className="text-xs font-semibold text-primary mb-3 uppercase tracking-wider">MCP Clients</p>
+          <p className="text-xs font-semibold text-primary mb-3 uppercase tracking-wider">Dashboard</p>
           <div className="space-y-2">
-            {clients.map((client, index) => (
+            {dashboardMetrics.map((metric, index) => (
               <motion.div
-                key={client.name}
+                key={metric.label}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 + index * 0.1 }}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 border border-primary/30 text-xs"
+                className="flex items-center justify-between px-3 py-2 rounded-lg bg-primary/10 border border-primary/30 text-xs"
               >
-                <client.icon className="w-3.5 h-3.5 text-primary/70" />
-                <span className="truncate text-primary/80">{client.name}</span>
+                <span className="text-primary/80 truncate">{metric.label}</span>
+                <span className="font-bold text-primary">{metric.value}</span>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Gateway Column */}
+        {/* Platform Column */}
         <div className="relative">
           <p className="text-xs font-semibold text-foreground mb-3 uppercase tracking-wider text-center">
-            Layer 10 Gateway
+            Platform
           </p>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -79,10 +71,10 @@ export const ArchitectureDiagram = () => {
           >
             <div className="flex items-center gap-2 mb-3 pb-2 border-b border-border">
               <Shield className="w-4 h-4 text-secondary" />
-              <span className="text-xs font-semibold">MCP Security Proxy</span>
+              <span className="text-xs font-semibold">AI-Powered Engine</span>
             </div>
             <div className="space-y-1.5">
-              {gatewayFeatures.map((feature, index) => (
+              {platformFeatures.map((feature, index) => (
                 <motion.div
                   key={feature.name}
                   initial={{ opacity: 0 }}
@@ -96,24 +88,24 @@ export const ArchitectureDiagram = () => {
               ))}
             </div>
           </motion.div>
-          
+
           {/* Connection Lines */}
           <div className="absolute top-1/2 left-0 w-full h-px border-t border-dashed border-primary/30 -z-10" />
         </div>
 
-        {/* Servers Column */}
+        {/* Tools Column */}
         <div>
-          <p className="text-xs font-semibold text-green-500 mb-3 uppercase tracking-wider text-right">MCP Servers</p>
+          <p className="text-xs font-semibold text-green-500 mb-3 uppercase tracking-wider text-right">Integrations</p>
           <div className="space-y-2">
-            {servers.map((server, index) => (
+            {connectedTools.map((tool, index) => (
               <motion.div
-                key={server.name}
+                key={tool.name}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 + index * 0.1 }}
                 className="flex items-center justify-end gap-2 px-3 py-2 rounded-lg bg-green-500/10 border border-green-500/30 text-xs"
               >
-                <span className="text-green-400/80">{server.name}</span>
+                <span className="text-green-400/80">{tool.name}</span>
                 <Server className="w-3.5 h-3.5 text-green-500/70" />
               </motion.div>
             ))}
@@ -131,24 +123,28 @@ export const ArchitectureDiagram = () => {
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            12 servers connected
+            5 domains connected
           </span>
-          <span className="text-muted-foreground">284 req/min</span>
-          <span className="text-muted-foreground">0 threats blocked</span>
+          <span className="text-muted-foreground">153 safeguards</span>
+          <span className="text-muted-foreground">3 frameworks</span>
         </div>
       </motion.div>
 
       {/* Stats Row */}
       <div className="grid grid-cols-3 gap-4 mt-4 pt-4 border-t border-border">
-        {stats.map((stat, index) => (
+        {[
+          { value: "CIS v8.1.2", label: "Controls Framework", color: "text-green-500" },
+          { value: "CMMC v2", label: "Compliance", color: "text-primary" },
+          { value: "NIST 171", label: "Compliance", color: "text-amber-500" },
+        ].map((stat, index) => (
           <motion.div
-            key={stat.label}
+            key={stat.label + stat.value}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 + index * 0.1 }}
             className="text-center"
           >
-            <p className={`text-xl font-bold ${stat.color}`}>{stat.value}</p>
+            <p className={`text-sm font-bold ${stat.color}`}>{stat.value}</p>
             <p className="text-[10px] text-muted-foreground">{stat.label}</p>
           </motion.div>
         ))}

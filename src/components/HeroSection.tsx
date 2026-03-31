@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ShieldCheck, Lock, Activity } from "lucide-react";
+import { ArrowRight, ShieldCheck, Brain, Activity } from "lucide-react";
 import { ArchitectureDiagram } from "./ArchitectureDiagram";
 
 const badges = [
-  { icon: Lock, label: "OAuth 2.1", sublabel: "Authentication" },
-  { icon: ShieldCheck, label: "TBAC", sublabel: "Task-Based Access" },
-  { icon: Activity, label: "Real-time", sublabel: "Risk Scoring" },
+  { icon: ShieldCheck, label: "CIS v8.1.2", sublabel: "153 Safeguards" },
+  { icon: Brain, label: "AI-Powered", sublabel: "Gemini Consultant" },
+  { icon: Activity, label: "Live Telemetry", sublabel: "Via MCP Gateway" },
 ];
 
 export const HeroSection = () => {
@@ -16,7 +16,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0 grid-pattern opacity-30" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
@@ -33,30 +33,30 @@ export const HeroSection = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/30 mb-8"
             >
               <span className="w-2 h-2 bg-secondary rounded-full animate-pulse-glow" />
-              <span className="text-sm text-muted-foreground">Enterprise MCP Gateway</span>
+              <span className="text-sm text-muted-foreground">Cyber Roadmap Engine</span>
             </motion.div>
 
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Secure AI Integration for{" "}
-              <span className="text-gradient">Security Operations</span>
+              AI-Powered Security Roadmap for{" "}
+              <span className="text-gradient">Modern CISOs</span>
             </h1>
 
             {/* Description */}
             <p className="text-lg text-muted-foreground mb-8 max-w-xl">
-              The enterprise-grade MCP Gateway built for security teams. Connect AI agents to 
-              vulnerability scanners, SIEM platforms, and security tools with enterprise 
-              authentication, audit logging, and risk-aware routing.
+              Track CIS Controls v8.1.2 implementation, map compliance frameworks, and get
+              AI-assisted security guidance — powered by live telemetry from your security
+              stack via MCP.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-12">
-              <Button variant="hero" size="lg" className="group">
-                Get Started
+              <Button variant="hero" size="lg" className="group" onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}>
+                Request a Demo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="heroOutline" size="lg">
-                View Architecture
+              <Button variant="heroOutline" size="lg" onClick={() => document.getElementById('architecture')?.scrollIntoView({ behavior: 'smooth' })}>
+                See How It Works
               </Button>
             </div>
 

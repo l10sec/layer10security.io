@@ -1,63 +1,56 @@
 import { motion } from "framer-motion";
-import { 
-  Shield, 
-  Brain, 
-  Mail, 
-  Users, 
-  Activity, 
-  Scan, 
-  Cloud, 
-  Ticket 
+import {
+  Shield,
+  Users,
+  Mail,
+  Brain,
+  Scan,
+  Globe,
+  Plug
 } from "lucide-react";
 
 const integrationCategories = [
   {
     icon: Shield,
-    title: "EDR / XDR",
-    tools: ["CrowdStrike", "Defender for Endpoint", "SentinelOne", "Carbon Black"],
+    title: "Endpoint Detection & Response",
+    tools: ["CrowdStrike Falcon", "SentinelOne"],
     color: "primary",
   },
   {
-    icon: Brain,
-    title: "Threat Intelligence",
-    tools: ["MISP", "VirusTotal", "Recorded Future", "AlienVault OTX"],
+    icon: Users,
+    title: "Identity & Access Management",
+    tools: ["Microsoft Entra ID", "BalkanID"],
     color: "secondary",
   },
   {
     icon: Mail,
     title: "Email Security",
-    tools: ["Defender for O365", "Proofpoint", "Mimecast", "Abnormal"],
+    tools: ["Mimecast", "Abnormal Security"],
     color: "accent",
   },
   {
-    icon: Users,
-    title: "Identity & Access",
-    tools: ["Entra ID", "Okta", "CyberArk", "Ping Identity"],
+    icon: Brain,
+    title: "Threat Intelligence",
+    tools: ["OpenCTI"],
     color: "primary",
-  },
-  {
-    icon: Activity,
-    title: "SIEM & SOAR",
-    tools: ["Splunk", "Sentinel", "Chronicle", "Elastic SIEM"],
-    color: "secondary",
   },
   {
     icon: Scan,
-    title: "Vulnerability Scanners",
-    tools: ["Nmap", "Nuclei", "Trivy", "Qualys"],
+    title: "Extended Detection",
+    tools: ["Microsoft Defender XDR"],
+    color: "secondary",
+  },
+  {
+    icon: Globe,
+    title: "Network Security",
+    tools: ["Zscaler ZIA"],
     color: "accent",
   },
   {
-    icon: Cloud,
-    title: "Cloud Security",
-    tools: ["AWS Security Hub", "Azure Defender", "GCP SCC", "Wiz"],
+    icon: Plug,
+    title: "More via MCP",
+    tools: ["Any tool that speaks MCP can be integrated"],
     color: "primary",
-  },
-  {
-    icon: Ticket,
-    title: "Ticketing & Ops",
-    tools: ["ServiceNow", "Jira", "PagerDuty", "Slack"],
-    color: "secondary",
   },
 ];
 
@@ -79,7 +72,7 @@ export const IntegrationsSection = () => {
     <section id="integrations" className="py-24 relative overflow-hidden bg-muted/20">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -93,7 +86,7 @@ export const IntegrationsSection = () => {
             <span className="text-gradient">Security Stack</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Pre-built MCP servers for the tools your security team already uses.
+            Live telemetry from your security tools via the Model Context Protocol. One gateway, every domain.
           </p>
         </motion.div>
 
@@ -113,9 +106,9 @@ export const IntegrationsSection = () => {
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${getColorClasses(category.color)}`}>
                     <category.icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-bold">{category.title}</h3>
+                  <h3 className="font-bold text-sm">{category.title}</h3>
                 </div>
-                
+
                 {/* Tools */}
                 <div className="space-y-2">
                   {category.tools.map((tool) => (

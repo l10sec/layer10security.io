@@ -1,34 +1,34 @@
 import { motion } from "framer-motion";
-import { Scan, AlertCircle, Zap, Code2 } from "lucide-react";
+import { CalendarRange, ClipboardCheck, MessageSquare, Layers } from "lucide-react";
 
 const useCases = [
   {
     number: "01",
-    icon: Scan,
-    title: "AI-Powered Vulnerability Scanning",
-    description: "Let AI agents orchestrate comprehensive vulnerability assessments across your infrastructure. Combine Nmap, Nuclei, and custom scanners through a single secure gateway.",
-    tags: ["Nmap", "Nuclei", "Trivy"],
+    icon: CalendarRange,
+    title: "Quarterly Security Roadmap",
+    description: "Generate a risk-prioritized roadmap across configurable quarters. AI considers your implementation group (IG1/IG2/IG3), compliance requirements, and current gaps.",
+    tags: ["IG1/IG2/IG3", "Risk-Weighted", "1-12 Quarters"],
   },
   {
     number: "02",
-    icon: AlertCircle,
-    title: "Automated Risk Assessment",
-    description: "AI agents query CVE databases, correlate with your asset inventory, and generate prioritized risk reports—all with full audit trails for compliance.",
-    tags: ["CVE Lookup", "Asset Correlation", "CVSS Scoring"],
+    icon: ClipboardCheck,
+    title: "Compliance Audit Preparation",
+    description: "Instantly see your CMMC v2 or NIST 800-171 readiness mapped from CIS Controls. Export evidence packages showing which practices are addressed.",
+    tags: ["CMMC v2", "NIST 800-171", "Evidence Export"],
   },
   {
     number: "03",
-    icon: Zap,
-    title: "Incident Response Automation",
-    description: "Connect your SOAR platform to AI agents that can investigate alerts, gather context from multiple tools, and execute response playbooks.",
-    tags: ["SIEM Integration", "Playbook Execution", "Alert Triage"],
+    icon: MessageSquare,
+    title: "Live Security Posture",
+    description: "Ask the AI consultant about your vulnerability counts, email threats, or identity risks — it queries your actual security tools in real time via MCP.",
+    tags: ["Real-Time Queries", "AI Chat", "MCP Telemetry"],
   },
   {
     number: "04",
-    icon: Code2,
-    title: "Security Engineering",
-    description: "Empower developers with AI assistants that can check code for vulnerabilities, scan dependencies, and enforce security policies in CI/CD pipelines.",
-    tags: ["SAST/DAST", "Dependency Scan", "Policy Gates"],
+    icon: Layers,
+    title: "Vendor Consolidation",
+    description: "See all your security tools in one view. Understand which CIS Controls each vendor covers and identify gaps or overlaps.",
+    tags: ["Tool Coverage", "Gap Analysis", "Overlap Detection"],
   },
 ];
 
@@ -36,7 +36,7 @@ export const UseCasesSection = () => {
   return (
     <section id="use-cases" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-15" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -47,10 +47,10 @@ export const UseCasesSection = () => {
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Use Cases</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
             Built for{" "}
-            <span className="text-gradient">Security Teams</span>
+            <span className="text-gradient">Security Leaders</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From vulnerability management to incident response—Layer 10 powers AI-driven security workflows.
+            From roadmap planning to compliance audits — the Cyber Roadmap Engine powers data-driven security decisions.
           </p>
         </motion.div>
 
@@ -72,18 +72,18 @@ export const UseCasesSection = () => {
                       {useCase.number}
                     </span>
                   </div>
-                  
+
                   {/* Icon */}
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                     <useCase.icon className="w-8 h-8 text-primary" />
                   </div>
-                  
+
                   {/* Content */}
                   <div className="flex-1">
                     <h3 className="text-xl font-bold mb-2">{useCase.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{useCase.description}</p>
                   </div>
-                  
+
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 lg:flex-shrink-0">
                     {useCase.tags.map((tag) => (

@@ -1,48 +1,48 @@
 import { motion } from "framer-motion";
-import { 
-  KeyRound, 
-  Search, 
-  FileText, 
-  BarChart3, 
-  Database, 
-  Settings2 
+import {
+  Brain,
+  Network,
+  FileCheck,
+  Map,
+  Activity,
+  Target
 } from "lucide-react";
 
 const features = [
   {
-    icon: KeyRound,
-    title: "Task-Based Access Control",
-    description: "Go beyond RBAC with context-aware authorization. AI agents get precisely scoped permissions based on the security task at hand.",
-    highlights: ["Dynamic permission scoping", "Context-aware authorization", "Least-privilege enforcement"],
+    icon: Brain,
+    title: "AI Security Consultant",
+    description: "Conversational AI agent that understands your CIS Controls posture, queries live security data, and provides contextual recommendations grounded in your actual implementation status.",
+    highlights: ["Context-aware guidance", "Live data queries", "Implementation-grounded"],
   },
   {
-    icon: Search,
-    title: "Deep Payload Inspection",
-    description: "Scan every MCP request for prompt injection, command injection, and malicious payloads before they reach your security tools.",
+    icon: Network,
+    title: "MCP Gateway Integration",
+    description: "Connect your security stack through the Model Context Protocol. One gateway aggregates tools from CrowdStrike, Microsoft, Abnormal, OpenCTI, and more — with automatic discovery.",
     highlights: [],
   },
   {
-    icon: FileText,
-    title: "Forensic Audit Logging",
-    description: "Immutable, timestamped logs of every AI-tool interaction. SIEM-ready exports for Splunk, Elastic, and your compliance team.",
+    icon: FileCheck,
+    title: "Compliance Mapping",
+    description: "Automatic cross-mapping between CIS Controls v8.1.2, CMMC v2.0, and NIST 800-171 r3. See exactly which CMMC practices are satisfied by each control implementation.",
     highlights: [],
   },
   {
-    icon: BarChart3,
-    title: "Real-Time Risk Scoring",
-    description: "ML-powered risk assessment for every request. Automatically flag, throttle, or block high-risk AI operations before damage occurs.",
+    icon: Map,
+    title: "AI-Powered Roadmap",
+    description: "Generate prioritized implementation roadmaps using AI that considers your risk profile, business context, and current posture. Configurable 1-12 quarter horizons.",
     highlights: [],
   },
   {
-    icon: Database,
-    title: "Security Tool Registry",
-    description: "Curated catalog of pre-vetted security MCP servers. Nmap, Nuclei, SQLMap, and more—all security reviewed and ready to deploy.",
+    icon: Activity,
+    title: "Live Security Telemetry",
+    description: "Real-time data from your EDR, email security, identity governance, and threat intelligence platforms feeds directly into your security posture assessment.",
     highlights: [],
   },
   {
-    icon: Settings2,
-    title: "Policy Engine",
-    description: "Define granular allow/deny rules for tools, actions, and data. Enforce security policies consistently across all AI agent interactions.",
+    icon: Target,
+    title: "Risk-Based Prioritization",
+    description: "Weight controls by business impact — data sensitivity, regulatory exposure, threat landscape. Focus resources where they reduce the most risk.",
     highlights: [],
   },
 ];
@@ -52,7 +52,7 @@ export const FeaturesSection = () => {
     <section id="features" className="py-24 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-secondary/5 rounded-full blur-3xl" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -63,10 +63,10 @@ export const FeaturesSection = () => {
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Capabilities</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
             Purpose-Built for{" "}
-            <span className="text-gradient">Security Operations</span>
+            <span className="text-gradient">Security Leaders</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Every feature designed with security teams in mind—from authentication to audit trails.
+            Every feature designed to help CISOs track, prioritize, and improve their security posture.
           </p>
         </motion.div>
 
@@ -85,13 +85,13 @@ export const FeaturesSection = () => {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-5">
                   <feature.icon className="w-6 h-6 text-primary" />
                 </div>
-                
+
                 {/* Content */}
                 <h3 className="text-lg font-bold mb-3">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                   {feature.description}
                 </p>
-                
+
                 {/* Highlights */}
                 {feature.highlights.length > 0 && (
                   <ul className="space-y-2">
@@ -103,7 +103,7 @@ export const FeaturesSection = () => {
                     ))}
                   </ul>
                 )}
-                
+
                 {/* Hover Effect */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </div>

@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
-import { Puzzle, Eye, ClipboardList } from "lucide-react";
+import { FileSpreadsheet, EyeOff, Compass } from "lucide-react";
 
 const challenges = [
   {
-    icon: Puzzle,
-    title: "Fragmented Tool Access",
-    description: "Security teams juggle dozens of tools—scanners, SIEMs, threat intel feeds—each with separate authentication and no unified AI interface.",
+    icon: FileSpreadsheet,
+    title: "Compliance Complexity",
+    description: "Mapping CIS Controls to CMMC and NIST 800-171 is manual, error-prone, and never up to date.",
   },
   {
-    icon: Eye,
-    title: "Security Blind Spots",
-    description: "Standard MCP gateways lack deep payload inspection, injection detection, and security-specific audit trails required for compliance.",
+    icon: EyeOff,
+    title: "Blind Spot in Security Posture",
+    description: "Your security tools generate data, but connecting that data to your control implementation status requires manual effort.",
   },
   {
-    icon: ClipboardList,
-    title: "Compliance Gaps",
-    description: "When AI agents interact with sensitive security infrastructure, you need forensic-grade logging and evidence for auditors.",
+    icon: Compass,
+    title: "Roadmap Paralysis",
+    description: "Prioritizing which controls to implement first across 153 safeguards is overwhelming without risk-based guidance.",
   },
 ];
 
@@ -23,7 +23,7 @@ export const ChallengeSection = () => {
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-20" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -33,12 +33,12 @@ export const ChallengeSection = () => {
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">The Challenge</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
-            AI Agents Need Secure Access to{" "}
-            <span className="text-gradient">Security Tools</span>
+            CISOs Face a{" "}
+            <span className="text-gradient">Growing Gap</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Traditional API gateways weren't built for the unique challenges of AI agent 
-            orchestration in security environments.
+            Security leaders are overwhelmed by compliance demands, fragmented tooling, and
+            the challenge of prioritizing 153 controls without clear risk context.
           </p>
         </motion.div>
 
@@ -57,11 +57,11 @@ export const ChallengeSection = () => {
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                   <challenge.icon className="w-7 h-7 text-primary" />
                 </div>
-                
+
                 {/* Content */}
                 <h3 className="text-xl font-bold mb-4">{challenge.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{challenge.description}</p>
-                
+
                 {/* Decorative Glow */}
                 <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10 blur-xl" />
               </div>
