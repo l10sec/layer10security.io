@@ -135,7 +135,7 @@ export const ArchitectureDiagram = () => {
         {[
           { value: "CIS v8.1.2", label: "Controls Framework", color: "text-green-500" },
           { value: "CMMC v2", label: "Compliance", color: "text-primary" },
-          { value: "NIST 171", label: "Compliance", color: "text-amber-500" },
+          { value: "NIST 800-171", label: "Compliance", color: "text-amber-500" },
         ].map((stat, index) => (
           <motion.div
             key={stat.label + stat.value}
