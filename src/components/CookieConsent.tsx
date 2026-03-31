@@ -8,16 +8,16 @@ const CONSENT_KEY = "cookie-consent";
 const loadClarity = () => {
   if (window.clarity) return; // Already loaded
 
+  // Initialize the clarity queue
+  const w = window as Record<string, unknown>;
+  w.clarity = w.clarity || function (...args: unknown[]) {
+    ((w.clarity as { q?: unknown[][] }).q = (w.clarity as { q?: unknown[][] }).q || []).push(args);
+  };
+
+  // Load the Clarity tag script directly
   const script = document.createElement("script");
-  script.type = "text/javascript";
   script.async = true;
-  script.innerHTML = `
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "uwe1rrq82g");
-  `;
+  script.src = "https://www.clarity.ms/tag/uwe1rrq82g";
   document.head.appendChild(script);
 };
 
