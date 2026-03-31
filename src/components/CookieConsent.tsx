@@ -4,21 +4,27 @@ import { X } from "lucide-react";
 
 const CONSENT_KEY = "cookie-consent";
 
-// Function to load Microsoft Clarity
+// Function to load Microsoft Clarity using their exact bootstrap pattern
 const loadClarity = () => {
-  if (window.clarity) return; // Already loaded
+  // Prevent double-loading
+  if (document.querySelector('script[src*="clarity.ms"]')) return;
 
-  // Initialize the clarity queue
-  const w = window as Record<string, unknown>;
-  w.clarity = w.clarity || function (...args: unknown[]) {
-    ((w.clarity as { q?: unknown[][] }).q = (w.clarity as { q?: unknown[][] }).q || []).push(args);
+  // Clarity bootstrap: sets up queue, creates script tag, inserts before first script
+  const c = window as Record<string, unknown>;
+  const a = "clarity";
+  c[a] = c[a] || function (...args: unknown[]) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ((c[a] as any).q = (c[a] as any).q || []).push(args);
   };
-
-  // Load the Clarity tag script directly
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = "https://www.clarity.ms/tag/uwe1rrq82g";
-  document.head.appendChild(script);
+  const t = document.createElement("script");
+  t.async = true;
+  t.src = "https://www.clarity.ms/tag/uwe1rrq82g";
+  const y = document.getElementsByTagName("script")[0];
+  if (y?.parentNode) {
+    y.parentNode.insertBefore(t, y);
+  } else {
+    document.head.appendChild(t);
+  }
 };
 
 // Extend Window interface for Clarity
