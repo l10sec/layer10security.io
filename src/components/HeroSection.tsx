@@ -44,9 +44,9 @@ export const HeroSection = () => {
 
             {/* Description */}
             <p className="text-lg text-muted-foreground mb-8 max-w-xl">
-              Track CIS Controls v8.1.2 implementation, map compliance frameworks, and get
-              AI-assisted security guidance — powered by live telemetry from your security
-              stack via MCP.
+              Track your security control implementation, map to compliance frameworks like
+              CMMC and NIST 800-171, and get AI-assisted guidance — powered by live
+              telemetry from your security stack.
             </p>
 
             {/* CTA Buttons */}
