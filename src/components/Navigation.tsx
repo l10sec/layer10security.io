@@ -58,6 +58,12 @@ export const Navigation = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-4">
+          <a
+            href="https://cyberroadmap.layer10security.dev"
+            className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+          >
+            Login
+          </a>
           <Button variant="hero" size="sm" onClick={() => scrollToSection('#demo')}>
             Request Demo
           </Button>
@@ -92,6 +98,12 @@ export const Navigation = () => {
                 </button>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
+                <a
+                  href="https://cyberroadmap.layer10security.dev"
+                  className="text-center text-muted-foreground hover:text-foreground transition-colors py-2"
+                >
+                  Login
+                </a>
                 <Button variant="hero" className="w-full" onClick={() => scrollToSection('#demo')}>
                   Request Demo
                 </Button>
