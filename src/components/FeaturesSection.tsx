@@ -29,9 +29,9 @@ const features = [
   },
   {
     icon: Map,
-    title: "AI-Powered Roadmap",
-    description: "Generate prioritized implementation roadmaps using AI that considers your risk profile, business context, and current posture. Configurable 1-12 quarter horizons.",
-    highlights: [],
+    title: "Roadmap Simulator",
+    description: "Generate and iterate on security roadmaps through conversation. Run what-if scenarios — adjust budgets, shift timelines, reprioritize controls — and see the capability impact before you commit.",
+    highlights: ["What-if simulations", "Capability impact analysis", "Versioned drafts"],
   },
   {
     icon: Activity,

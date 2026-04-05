@@ -5,9 +5,9 @@ const useCases = [
   {
     number: "01",
     icon: CalendarRange,
-    title: "Quarterly Security Roadmap",
-    description: "Generate a risk-prioritized roadmap across configurable quarters. AI considers your implementation group (IG1/IG2/IG3), compliance requirements, and current gaps.",
-    tags: ["IG1/IG2/IG3", "Risk-Weighted", "1-12 Quarters"],
+    title: "Roadmap Simulation",
+    description: "Generate a risk-prioritized roadmap, then iterate through conversation. Ask 'what if we delay endpoint controls to Q3?' and see the impact on capability coverage and compliance — before committing.",
+    tags: ["What-If Scenarios", "Capability Impact", "Versioned Drafts"],
   },
   {
     number: "02",
