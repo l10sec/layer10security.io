@@ -104,15 +104,7 @@ export const CTASection = () => {
           </motion.form>
 
           {/* Trust Indicators */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="mt-6 text-sm text-muted-foreground"
-          >
-            We typically respond within one business day
-          </motion.p>
+          {/* Response time removed — don't overpromise */}
         </motion.div>
       </div>
     </section>
