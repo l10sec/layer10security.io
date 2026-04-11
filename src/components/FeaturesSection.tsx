@@ -5,7 +5,8 @@ import {
   FileCheck,
   Map,
   Activity,
-  Target
+  Target,
+  ShieldOff
 } from "lucide-react";
 
 const features = [
@@ -44,6 +45,12 @@ const features = [
     title: "Risk-Based Prioritization",
     description: "Weight controls by business impact — data sensitivity, regulatory exposure, threat landscape. Focus resources where they reduce the most risk.",
     highlights: [],
+  },
+  {
+    icon: ShieldOff,
+    title: "Sensitive Data Protection",
+    description: "Your sensitive data never reaches the AI. Automatically detects and redacts IP addresses, hostnames, organization names, email addresses, and custom terms before every AI interaction.",
+    highlights: ["150+ built-in detectors", "Full audit trail", "Enterprise-grade (FedRAMP)"],
   },
 ];
 

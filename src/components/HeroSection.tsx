@@ -4,9 +4,9 @@ import { ArrowRight, ShieldCheck, Brain, Activity } from "lucide-react";
 import { ArchitectureDiagram } from "./ArchitectureDiagram";
 
 const badges = [
-  { icon: ShieldCheck, label: "CIS v8.1.2", sublabel: "153 Safeguards" },
-  { icon: Brain, label: "AI-Powered", sublabel: "Security Consultant" },
-  { icon: Activity, label: "Live Telemetry", sublabel: "From Your Security Stack" },
+  { icon: ShieldCheck, label: "30 Frameworks", sublabel: "One Control Backbone" },
+  { icon: Brain, label: "AI Agents", sublabel: "Per Security Control" },
+  { icon: Activity, label: "Live Telemetry", sublabel: "Evidence, Not Assumptions" },
 ];
 
 export const HeroSection = () => {
@@ -33,30 +33,36 @@ export const HeroSection = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/30 mb-8"
             >
               <span className="w-2 h-2 bg-secondary rounded-full animate-pulse-glow" />
-              <span className="text-sm text-muted-foreground">Cyber Roadmap Engine</span>
+              <span className="text-sm text-muted-foreground">AI Security Engineering</span>
             </motion.div>
 
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              AI-Powered Security Roadmap for{" "}
-              <span className="text-gradient">Modern CISOs</span>
+              From Compliance Gap to{" "}
+              <span className="text-gradient">Verified Remediation</span>
             </h1>
 
-            {/* Description */}
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl">
-              Track your security control implementation, map to compliance frameworks like
-              CMMC and NIST 800-171, and get AI-assisted guidance — powered by live
-              telemetry from your security stack.
+            {/* Subheading */}
+            <p className="text-xl text-foreground/80 font-medium mb-4">
+              AI agents that find what's broken, prove it with live data, and fix it through your security stack.
+            </p>
+
+            {/* Description — the narrative flow */}
+            <p className="text-base text-muted-foreground mb-8 max-w-xl leading-relaxed">
+              Compliance risk surfaces the gap. Your security controls reveal the deficiency.
+              Live telemetry from your EDR, IAM, and email security identifies exactly what's
+              misconfigured. AI remediation agents close it — with your approval, through your
+              existing tools. One control fixed, 30 frameworks updated.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-12">
               <Button variant="hero" size="lg" className="group" onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}>
-                Request a Demo
+                See It In Action
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="heroOutline" size="lg" onClick={() => document.getElementById('architecture')?.scrollIntoView({ behavior: 'smooth' })}>
-                See How It Works
+                How It Works
               </Button>
             </div>
 

@@ -14,7 +14,8 @@ import {
   Mail,
   User,
   Search,
-  MoreHorizontal
+  MoreHorizontal,
+  ShieldOff
 } from "lucide-react";
 
 const engineModules = [
@@ -22,6 +23,7 @@ const engineModules = [
   { icon: Brain, label: "AI Security Consultant" },
   { icon: Map, label: "Roadmap Generator" },
   { icon: FileCheck, label: "Compliance Mapper" },
+  { icon: ShieldOff, label: "Sensitive Data Protection" },
 ];
 
 const gatewayComponents = [
@@ -100,7 +102,7 @@ export const ArchitectureSection = () => {
                 <h3 className="font-bold text-sm uppercase tracking-wider">Cyber Roadmap Engine</h3>
               </div>
               <div className="bg-card border-2 border-secondary/30 rounded-2xl p-6">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                   {engineModules.map((module, index) => (
                     <motion.div
                       key={module.label}

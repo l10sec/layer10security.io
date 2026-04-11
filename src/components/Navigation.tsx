@@ -6,6 +6,7 @@ import { Logo } from "./Logo";
 
 const navItems = [
   { label: "Features", href: "#features" },
+  { label: "Data Protection", href: "#security" },
   { label: "Architecture", href: "#architecture" },
   { label: "Integrations", href: "#integrations" },
   { label: "Use Cases", href: "#use-cases" },

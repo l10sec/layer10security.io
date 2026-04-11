@@ -2,7 +2,7 @@ import { Github, Linkedin, Twitter, ShieldCheck } from "lucide-react";
 import { Logo } from "./Logo";
 
 const footerLinks = {
-  Product: ["Features", "Architecture", "Integrations"],
+  Product: ["Features", "Data Protection", "Architecture", "Integrations"],
   Company: ["About", "Contact"],
   Resources: ["Documentation", "Security"],
 };
