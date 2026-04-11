@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { ShieldCheck, FileCheck, Plug, Layers } from "lucide-react";
 
 const metrics = [
-  { icon: ShieldCheck, value: "153", label: "Safeguards", sublabel: "CIS Controls v8.1.2" },
-  { icon: FileCheck, value: "3", label: "Compliance Frameworks", sublabel: "CIS, CMMC v2, NIST 800-171" },
-  { icon: Plug, value: "61+", label: "Security Tools", sublabel: "Via MCP Integration" },
+  { icon: ShieldCheck, value: "30", label: "Compliance Frameworks", sublabel: "HIPAA, SOC 2, ISO 27001, CMMC, PCI-DSS..." },
+  { icon: FileCheck, value: "3,400+", label: "Control Mappings", sublabel: "Cross-framework coverage" },
+  { icon: Plug, value: "72+", label: "Security Tools", sublabel: "Connected via MCP" },
   { icon: Layers, value: "5", label: "Security Domains", sublabel: "EDR, IAM, Email, Threat Intel, IGA" },
 ];
 

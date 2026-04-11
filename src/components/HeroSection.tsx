@@ -4,8 +4,8 @@ import { ArrowRight, ShieldCheck, Brain, Activity } from "lucide-react";
 import { ArchitectureDiagram } from "./ArchitectureDiagram";
 
 const badges = [
-  { icon: ShieldCheck, label: "30 Frameworks", sublabel: "One Control Backbone" },
-  { icon: Brain, label: "AI Agents", sublabel: "Per Security Control" },
+  { icon: ShieldCheck, label: "30 Frameworks", sublabel: "One Fix, All Satisfied" },
+  { icon: Brain, label: "AI Agents", sublabel: "Find, Prove, Remediate" },
   { icon: Activity, label: "Live Telemetry", sublabel: "Evidence, Not Assumptions" },
 ];
 
