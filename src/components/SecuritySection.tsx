@@ -149,7 +149,7 @@ export const SecuritySection = () => {
             </div>
             <div className="text-center p-4 rounded-xl bg-muted/50">
               <p className="text-sm font-bold mb-1">Enterprise</p>
-              <p className="text-xs text-muted-foreground">Full redaction + custom sensitive term lists + tool result de-identification from MCP integrations</p>
+              <p className="text-xs text-muted-foreground">Full redaction + custom sensitive term lists + tool result de-identification across all integrations</p>
             </div>
           </div>
         </motion.div>

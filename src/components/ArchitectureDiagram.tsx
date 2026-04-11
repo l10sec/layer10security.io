@@ -1,19 +1,19 @@
 import { motion } from "framer-motion";
-import { Shield, Brain, BarChart3, FileCheck, Network, Server, Activity } from "lucide-react";
+import { Shield, Brain, BarChart3, Search, Wrench, Server, Activity } from "lucide-react";
 
 const dashboardMetrics = [
-  { label: "CIS Controls", value: "18", sublabel: "Families" },
-  { label: "Safeguards", value: "153", sublabel: "Tracked" },
-  { label: "Compliance", value: "3", sublabel: "Frameworks" },
+  { label: "Frameworks", value: "30", sublabel: "Mapped" },
+  { label: "Controls", value: "3,400+", sublabel: "Mappings" },
+  { label: "Security Tools", value: "72+", sublabel: "Connected" },
 ];
 
 const platformFeatures = [
-  { name: "AI Consultant", icon: Brain, active: true, color: "bg-green-500" },
-  { name: "Roadmap Engine", icon: BarChart3, active: true, color: "bg-green-500" },
-  { name: "Compliance Maps", icon: FileCheck, active: true, color: "bg-green-500" },
-  { name: "Tool Integration", icon: Network, active: true, color: "bg-blue-500" },
-  { name: "Live Telemetry", icon: Activity, active: true, color: "bg-blue-500" },
-  { name: "Risk Scoring", icon: Shield, active: true, color: "bg-amber-500" },
+  { name: "Identify Gaps", icon: Search, active: true, color: "bg-red-500" },
+  { name: "Prove with Data", icon: Activity, active: true, color: "bg-amber-500" },
+  { name: "Remediate", icon: Wrench, active: true, color: "bg-green-500" },
+  { name: "AI Agents", icon: Brain, active: true, color: "bg-blue-500" },
+  { name: "Compliance Scoring", icon: BarChart3, active: true, color: "bg-blue-500" },
+  { name: "Risk Prioritization", icon: Shield, active: true, color: "bg-purple-500" },
 ];
 
 const connectedTools = [
@@ -34,14 +34,14 @@ export const ArchitectureDiagram = () => {
           <span className="w-3 h-3 rounded-full bg-amber-500" />
           <span className="w-3 h-3 rounded-full bg-green-500" />
         </div>
-        <span className="text-xs text-muted-foreground ml-4">Cyber Roadmap Engine</span>
+        <span className="text-xs text-muted-foreground ml-4">Layer 10 Security</span>
       </div>
 
       {/* Three Column Layout */}
       <div className="grid grid-cols-3 gap-4">
         {/* Dashboard Column */}
         <div>
-          <p className="text-xs font-semibold text-primary mb-3 uppercase tracking-wider">Dashboard</p>
+          <p className="text-xs font-semibold text-primary mb-3 uppercase tracking-wider">Coverage</p>
           <div className="space-y-2">
             {dashboardMetrics.map((metric, index) => (
               <motion.div
@@ -61,7 +61,7 @@ export const ArchitectureDiagram = () => {
         {/* Platform Column */}
         <div className="relative">
           <p className="text-xs font-semibold text-foreground mb-3 uppercase tracking-wider text-center">
-            Platform
+            Engine
           </p>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -71,7 +71,7 @@ export const ArchitectureDiagram = () => {
           >
             <div className="flex items-center gap-2 mb-3 pb-2 border-b border-border">
               <Shield className="w-4 h-4 text-secondary" />
-              <span className="text-xs font-semibold">AI-Powered Engine</span>
+              <span className="text-xs font-semibold">AI Security Engineering</span>
             </div>
             <div className="space-y-1.5">
               {platformFeatures.map((feature, index) => (
@@ -95,7 +95,7 @@ export const ArchitectureDiagram = () => {
 
         {/* Tools Column */}
         <div>
-          <p className="text-xs font-semibold text-green-500 mb-3 uppercase tracking-wider text-right">Integrations</p>
+          <p className="text-xs font-semibold text-green-500 mb-3 uppercase tracking-wider text-right">Your Stack</p>
           <div className="space-y-2">
             {connectedTools.map((tool, index) => (
               <motion.div
@@ -118,37 +118,23 @@ export const ArchitectureDiagram = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
-        className="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs"
+        className="mt-6 pt-4 border-t border-border flex items-center justify-center gap-6 text-xs"
       >
-        <div className="flex items-center gap-4">
-          <span className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            5 domains connected
-          </span>
-          <span className="text-muted-foreground">153 safeguards</span>
-          <span className="text-muted-foreground">3 frameworks</span>
-        </div>
+        <span className="flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-red-500" />
+          Identify
+        </span>
+        <span className="text-muted-foreground">→</span>
+        <span className="flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-amber-500" />
+          Prove
+        </span>
+        <span className="text-muted-foreground">→</span>
+        <span className="flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+          Remediate
+        </span>
       </motion.div>
-
-      {/* Stats Row */}
-      <div className="grid grid-cols-3 gap-4 mt-4 pt-4 border-t border-border">
-        {[
-          { value: "CIS v8.1.2", label: "Controls Framework", color: "text-green-500" },
-          { value: "CMMC v2", label: "Compliance", color: "text-primary" },
-          { value: "NIST 800-171", label: "Compliance", color: "text-amber-500" },
-        ].map((stat, index) => (
-          <motion.div
-            key={stat.label + stat.value}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 + index * 0.1 }}
-            className="text-center"
-          >
-            <p className={`text-sm font-bold ${stat.color}`}>{stat.value}</p>
-            <p className="text-[10px] text-muted-foreground">{stat.label}</p>
-          </motion.div>
-        ))}
-      </div>
     </div>
   );
 };

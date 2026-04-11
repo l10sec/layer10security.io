@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 const engineModules = [
-  { icon: BarChart3, label: "Dashboard (CIS, CMMC, NIST)" },
+  { icon: BarChart3, label: "Compliance Dashboard" },
   { icon: Brain, label: "AI Security Consultant" },
   { icon: Map, label: "Roadmap Generator" },
   { icon: FileCheck, label: "Compliance Mapper" },
@@ -90,7 +90,7 @@ export const ArchitectureSection = () => {
               />
             </div>
 
-            {/* Row 2: Cyber Roadmap Engine */}
+            {/* Row 2: Layer 10 Security */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ export const ArchitectureSection = () => {
             >
               <div className="flex items-center gap-2 mb-4 justify-center">
                 <Cpu className="w-5 h-5 text-secondary" />
-                <h3 className="font-bold text-sm uppercase tracking-wider">Cyber Roadmap Engine</h3>
+                <h3 className="font-bold text-sm uppercase tracking-wider">Layer 10 Security</h3>
               </div>
               <div className="bg-card border-2 border-secondary/30 rounded-2xl p-6">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">

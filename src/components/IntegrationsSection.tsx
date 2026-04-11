@@ -48,8 +48,8 @@ const integrationCategories = [
   },
   {
     icon: Plug,
-    title: "Any MCP-Compatible Tool",
-    tools: ["Connect any security tool that speaks the Model Context Protocol"],
+    title: "Any Security Tool",
+    tools: ["Connect any security tool via our open integration protocol"],
     color: "primary",
   },
 ];

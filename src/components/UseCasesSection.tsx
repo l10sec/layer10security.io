@@ -13,21 +13,21 @@ const useCases = [
     number: "02",
     icon: ClipboardCheck,
     title: "Compliance Audit Preparation",
-    description: "Instantly see your CMMC v2 or NIST 800-171 readiness mapped from CIS Controls. Export evidence packages showing which practices are addressed.",
-    tags: ["CMMC v2", "NIST 800-171", "Evidence Export"],
+    description: "Instantly see your readiness across 30 compliance frameworks. Export evidence packages showing which requirements are satisfied by your current controls.",
+    tags: ["30 Frameworks", "Gap Analysis", "Evidence Export"],
   },
   {
     number: "03",
     icon: MessageSquare,
     title: "Live Security Posture",
-    description: "Ask the AI consultant about your vulnerability counts, email threats, or identity risks — it queries your actual security tools in real time via MCP.",
-    tags: ["Real-Time Queries", "AI Chat", "MCP Telemetry"],
+    description: "Ask the AI agent about your vulnerability counts, email threats, or identity risks — it queries your actual security tools in real time and attributes findings to specific controls.",
+    tags: ["Real-Time Queries", "AI Agent", "Live Telemetry"],
   },
   {
     number: "04",
     icon: Layers,
     title: "Vendor Consolidation",
-    description: "See all your security tools in one view. Understand which CIS Controls each vendor covers and identify gaps or overlaps.",
+    description: "See all your security tools in one view. Understand which compliance controls each tool covers and identify coverage gaps or overlaps.",
     tags: ["Tool Coverage", "Gap Analysis", "Overlap Detection"],
   },
 ];
@@ -50,7 +50,7 @@ export const UseCasesSection = () => {
             <span className="text-gradient">Security Leaders</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From roadmap planning to compliance audits — the Cyber Roadmap Engine powers data-driven security decisions.
+            From gap identification to verified remediation — Layer 10 powers data-driven compliance engineering.
           </p>
         </motion.div>
 

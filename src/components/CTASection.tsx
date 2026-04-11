@@ -68,8 +68,8 @@ export const CTASection = () => {
 
           {/* Description */}
           <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            Book a personalized demo to see how the Cyber Roadmap Engine maps your
-            security posture to compliance frameworks.
+            Book a personalized demo to see how Layer 10 finds your missing controls,
+            proves it with live data, and remediates them across 30 frameworks.
           </p>
 
           {/* Email Form */}

@@ -24,12 +24,12 @@ export const Footer = () => {
               <Logo />
             </div>
             <p className="text-sm text-muted-foreground mb-6 max-w-xs">
-              AI-powered cybersecurity roadmap engine for CISOs. Track CIS Controls, map compliance frameworks, and get AI-assisted guidance.
+              AI Security Engineering platform. Find missing and misconfigured security controls, prove it with live data, and remediate them.
             </p>
-            {/* CIS Badge */}
+            {/* Category Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
               <ShieldCheck className="w-4 h-4 text-primary" />
-              <span className="text-xs font-medium text-primary">Built on CIS Controls v8.1.2</span>
+              <span className="text-xs font-medium text-primary">30 Frameworks. One Fix.</span>
             </div>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (

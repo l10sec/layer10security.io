@@ -13,7 +13,7 @@ const features = [
   {
     icon: Brain,
     title: "AI Security Consultant",
-    description: "Conversational AI agent that understands your CIS Controls posture, queries live security data, and provides contextual recommendations grounded in your actual implementation status.",
+    description: "Conversational AI agent that understands your compliance posture, queries live security data, and provides contextual recommendations grounded in your actual control implementation status.",
     highlights: ["Context-aware guidance", "Live data queries", "Implementation-grounded"],
   },
   {
@@ -25,7 +25,7 @@ const features = [
   {
     icon: FileCheck,
     title: "Compliance Mapping",
-    description: "Automatic cross-mapping between CIS Controls v8.1.2, CMMC v2.0, and NIST 800-171 r3. See exactly which CMMC practices are satisfied by each control implementation.",
+    description: "One security control maps to requirements across 30 compliance frameworks simultaneously. Fix one gap, satisfy HIPAA, SOC 2, ISO 27001, CMMC, and PCI-DSS at once.",
     highlights: [],
   },
   {
