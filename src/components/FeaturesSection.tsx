@@ -12,14 +12,14 @@ import {
 const features = [
   {
     icon: Brain,
-    title: "AI Security Consultant",
-    description: "Conversational AI agent that understands your compliance posture, queries live security data, and provides contextual recommendations grounded in your actual control implementation status.",
-    highlights: ["Context-aware guidance", "Live data queries", "Implementation-grounded"],
+    title: "AI Security Agents",
+    description: "Intelligent agents that query your security tools, identify missing or misconfigured controls, and propose remediation steps — all grounded in live data, not assumptions.",
+    highlights: ["Evidence-based", "Per-control intelligence", "Human-approved remediation"],
   },
   {
     icon: Network,
-    title: "Security Tool Integration",
-    description: "Connect your security stack through the Model Context Protocol. One gateway aggregates tools from your EDR, email security, identity, and threat intelligence platforms — with automatic discovery.",
+    title: "Security Stack Integration",
+    description: "Connect 72+ security tools across EDR, email security, identity, and threat intelligence. One integration layer with automatic tool discovery and control attribution.",
     highlights: [],
   },
   {
@@ -36,9 +36,9 @@ const features = [
   },
   {
     icon: Activity,
-    title: "Live Security Telemetry",
-    description: "Real-time data from your EDR, email security, identity governance, and threat intelligence platforms feeds directly into your security posture assessment.",
-    highlights: [],
+    title: "Live Control Intelligence",
+    description: "Every security control shows real-time commentary backed by live data from your tools. Not just 'In Progress' — but exactly what's missing, what's misconfigured, and what to fix.",
+    highlights: ["Per-control evidence", "Data source attribution", "Actionable next steps"],
   },
   {
     icon: Target,
@@ -50,7 +50,7 @@ const features = [
     icon: ShieldOff,
     title: "Sensitive Data Protection",
     description: "Your sensitive data never reaches the AI. Automatically detects and redacts IP addresses, hostnames, organization names, email addresses, and custom terms before every AI interaction.",
-    highlights: ["150+ built-in detectors", "Full audit trail", "Enterprise-grade (FedRAMP)"],
+    highlights: ["150+ built-in detectors", "Full audit trail", "Enterprise-grade encryption"],
   },
 ];
 

@@ -9,8 +9,8 @@ const trustPoints = [
   },
   {
     icon: ShieldCheck,
-    title: "Google Cloud SDP",
-    description: "Powered by Google Cloud Sensitive Data Protection — enterprise-grade, FedRAMP-authorized infrastructure with 150+ built-in data detectors.",
+    title: "Enterprise-Grade Protection",
+    description: "Built on FedRAMP-authorized infrastructure with 150+ built-in data detectors. Your data stays within your trust boundary — always.",
   },
   {
     icon: FileSearch,
@@ -137,19 +137,19 @@ export const SecuritySection = () => {
           viewport={{ once: true }}
           className="mt-12 glass rounded-2xl p-8"
         >
-          <h3 className="font-bold text-center mb-6">Available Across All Tiers</h3>
+          <h3 className="font-bold text-center mb-6">Data Protection at Every Level</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center p-4 rounded-xl bg-muted/50">
-              <p className="text-sm font-bold mb-1">Starter</p>
-              <p className="text-xs text-muted-foreground">SDP detection with data flow audit trail — see what sensitive data moves through your AI pipeline</p>
+              <p className="text-sm font-bold mb-1">Free</p>
+              <p className="text-xs text-muted-foreground">Compliance gap analysis + 30 framework mappings with data flow audit trail</p>
             </div>
             <div className="text-center p-4 rounded-xl bg-primary/10 border border-primary/20">
-              <p className="text-sm font-bold mb-1 text-primary">Professional</p>
-              <p className="text-xs text-muted-foreground">Full data minimization with automatic redaction across all AI interactions</p>
+              <p className="text-sm font-bold mb-1 text-primary">Pro</p>
+              <p className="text-xs text-muted-foreground">Full data minimization with automatic redaction + unlimited AI agent remediation</p>
             </div>
             <div className="text-center p-4 rounded-xl bg-muted/50">
               <p className="text-sm font-bold mb-1">Enterprise</p>
-              <p className="text-xs text-muted-foreground">Full redaction + custom sensitive term lists + tool result de-identification across all integrations</p>
+              <p className="text-xs text-muted-foreground">Custom sensitive term lists + dedicated per-control agents + SLA guarantees</p>
             </div>
           </div>
         </motion.div>

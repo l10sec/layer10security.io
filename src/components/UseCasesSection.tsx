@@ -26,9 +26,9 @@ const useCases = [
   {
     number: "04",
     icon: Layers,
-    title: "Vendor Consolidation",
-    description: "See all your security tools in one view. Understand which compliance controls each tool covers and identify coverage gaps or overlaps.",
-    tags: ["Tool Coverage", "Gap Analysis", "Overlap Detection"],
+    title: "Automated Remediation",
+    description: "AI agents propose specific fixes for each missing or misconfigured control. You review, approve, and the agent executes through your existing security tools. Every action creates an audit trail.",
+    tags: ["Agent-Driven", "Human-Approved", "Audit Trail"],
   },
 ];
 

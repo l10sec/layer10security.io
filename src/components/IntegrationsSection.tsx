@@ -86,7 +86,7 @@ export const IntegrationsSection = () => {
             <span className="text-gradient">Security Stack</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Live telemetry from your security tools via the Model Context Protocol. One gateway, every domain.
+            Live telemetry from your security tools. One integration layer, every domain, automatic discovery.
           </p>
         </motion.div>
 

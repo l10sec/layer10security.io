@@ -20,16 +20,16 @@ import {
 
 const engineModules = [
   { icon: BarChart3, label: "Compliance Dashboard" },
-  { icon: Brain, label: "AI Security Consultant" },
-  { icon: Map, label: "Roadmap Generator" },
-  { icon: FileCheck, label: "Compliance Mapper" },
-  { icon: ShieldOff, label: "Sensitive Data Protection" },
+  { icon: Brain, label: "AI Security Agents" },
+  { icon: Map, label: "Roadmap Simulator" },
+  { icon: FileCheck, label: "30-Framework Mapper" },
+  { icon: ShieldOff, label: "Data Protection" },
 ];
 
 const gatewayComponents = [
-  { icon: Network, label: "Tool Discovery" },
-  { icon: Radio, label: "SSE/HTTP Transport" },
-  { icon: KeyRound, label: "Bearer/API Key Auth" },
+  { icon: Network, label: "Auto-Discovery" },
+  { icon: Radio, label: "Secure Transport" },
+  { icon: KeyRound, label: "Encrypted Auth" },
 ];
 
 const securityTools = [
