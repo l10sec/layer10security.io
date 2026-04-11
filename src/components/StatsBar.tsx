@@ -4,7 +4,7 @@ import { ShieldCheck, FileCheck, Plug, Layers } from "lucide-react";
 const metrics = [
   { icon: ShieldCheck, value: "30", label: "Compliance Frameworks", sublabel: "HIPAA, SOC 2, ISO 27001, CMMC, PCI-DSS..." },
   { icon: FileCheck, value: "3,400+", label: "Control Mappings", sublabel: "Cross-framework coverage" },
-  { icon: Plug, value: "72+", label: "Security Tools", sublabel: "Connected via MCP" },
+  { icon: Plug, value: "72+", label: "Security Tools", sublabel: "Connected to your stack" },
   { icon: Layers, value: "5", label: "Security Domains", sublabel: "EDR, IAM, Email, Threat Intel, IGA" },
 ];
 
