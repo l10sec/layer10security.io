@@ -44,15 +44,13 @@ export const HeroSection = () => {
 
             {/* Subheading */}
             <p className="text-xl text-foreground/80 font-medium mb-4">
-              AI agents that find what's broken, prove it with live data, and fix it through your security stack.
+              AI agents that identify missing controls, detect misconfigurations, and remediate them through your security stack.
             </p>
 
-            {/* Description — the narrative flow */}
+            {/* Description */}
             <p className="text-base text-muted-foreground mb-8 max-w-xl leading-relaxed">
-              Compliance risk surfaces the gap. Your security controls reveal the deficiency.
-              Live telemetry from your EDR, IAM, and email security identifies exactly what's
-              misconfigured. AI remediation agents close it — with your approval, through your
-              existing tools. One control fixed, 30 frameworks updated.
+              We find your missing and misconfigured security controls, prove it with
+              live data from your tools, and remediate them. One fix, 30 frameworks satisfied.
             </p>
 
             {/* CTA Buttons */}
