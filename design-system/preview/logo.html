@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Logo</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px 20px; display: flex; align-items: center; gap: 40px; background: var(--bg0); }
+  .mark { display: flex; align-items: center; gap: 12px; }
+  .wordmark { display: flex; flex-direction: column; line-height: 1; }
+  .wm1 { font-weight: 700; font-size: 22px; letter-spacing: 0.04em; }
+  .wm1 .a { color: var(--fg1); }
+  .wm1 .b { color: var(--indigo-500); }
+  .wm2 { font-size: 10px; color: var(--fg3); letter-spacing: 0.18em; margin-top: 4px; text-transform: uppercase; }
+  img { height: 80px; }
+</style>
+</head>
+<body>
+  <div class="mark">
+    <svg viewBox="0 0 64 64" width="52" height="52">
+      <defs>
+        <linearGradient id="l1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+        <linearGradient id="l2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+        <linearGradient id="l3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+      </defs>
+      <polygon points="32,8 56,22 32,36 8,22" fill="url(#l1)"/>
+      <polygon points="32,18 56,32 32,46 8,32" fill="url(#l2)"/>
+      <polygon points="32,28 56,42 32,56 8,42" fill="url(#l3)"/>
+    </svg>
+    <div class="wordmark">
+      <div class="wm1"><span class="a">LAYER</span><span class="b">10</span></div>
+      <div class="wm2">Security</div>
+    </div>
+  </div>
+  <img src="../assets/logo-website.png" alt="Layer 10 Security — Website logo" style="background:#fff; padding:6px 10px; border-radius:8px;">
+</body>
+</html>

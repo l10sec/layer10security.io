@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Input & Form</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 30px 20px; }
+  .form { display: flex; gap: 12px; max-width: 640px; }
+  input { flex: 1; height: 48px; padding: 0 16px; border-radius: 10px; background: var(--bg2); border: 1px solid var(--bg3); color: var(--fg1); font-size: 15px; font-family: var(--font-sans); }
+  input::placeholder { color: var(--fg4); }
+  input:focus { outline: 2px solid var(--indigo-500); outline-offset: 2px; border-color: transparent; }
+</style>
+</head>
+<body>
+  <div class="form">
+    <input placeholder="Enter your work email">
+    <button class="btn btn-hero">Request a Demo →</button>
+  </div>
+</body>
+</html>
