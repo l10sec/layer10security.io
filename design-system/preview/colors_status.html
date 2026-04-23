@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Colors — Status</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; }
+  .flow { display: flex; align-items: center; justify-content: center; gap: 20px; height: 100px; }
+  .step { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .dot { width: 22px; height: 22px; border-radius: 999px; box-shadow: 0 0 18px currentColor; }
+  .lbl { font-size: 12px; font-weight: 600; }
+  .hex { font-family: var(--font-mono); font-size: 10.5px; color: var(--fg3); }
+  .arrow { color: var(--fg3); font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+  <div class="flow">
+    <div class="step"><span class="dot" style="background:#EF4444;color:#EF4444"></span><div class="lbl">Identify</div><div class="hex">#EF4444</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><span class="dot" style="background:#F59E0B;color:#F59E0B"></span><div class="lbl">Prove</div><div class="hex">#F59E0B</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><span class="dot" style="background:#22C55E;color:#22C55E"></span><div class="lbl">Remediate</div><div class="hex">#22C55E</div></div>
+  </div>
+</body>
+</html>
