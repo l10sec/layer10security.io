@@ -36,21 +36,19 @@ export const HeroSection = () => {
               <span className="text-sm text-muted-foreground">AI Security Engineering</span>
             </motion.div>
 
-            {/* Heading */}
+            {/* Heading — manifesto triplet locking the category against both
+                adjacent categories (GRC and SOC). Gradient reserved for the
+                payoff phrase per the brand restraint on gradient overuse. */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              From Compliance Gap to{" "}
-              <span className="text-gradient">Verified Remediation</span>
+              GRC reports. SOC responds.{" "}
+              <span className="text-gradient">We engineer.</span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl text-foreground/80 font-medium mb-4">
-              AI agents that identify missing controls, detect misconfigurations, and remediate them through your security stack.
-            </p>
-
-            {/* Description */}
-            <p className="text-base text-muted-foreground mb-8 max-w-xl leading-relaxed">
-              We find your missing and misconfigured security controls, prove it with
-              live data from your tools, and remediate them. One fix, 30 frameworks satisfied.
+            <p className="text-xl text-foreground/80 font-medium mb-8 max-w-xl leading-relaxed">
+              Between &lsquo;audit passed&rsquo; and &lsquo;incident detected&rsquo; sits the real work &mdash;
+              designing, deploying, verifying controls. Layer 10&rsquo;s AI agents do it.
+              30 compliance frameworks. 72+ security tools. One control spine.
             </p>
 
             {/* CTA Buttons */}
